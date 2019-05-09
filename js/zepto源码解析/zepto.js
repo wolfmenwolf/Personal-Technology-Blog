@@ -2,7 +2,7 @@
 
 var Zepto = (function() {
   var undefined, key, $, classList, emptyArray = [], slice = emptyArray.slice, filter = emptyArray.filter,
-    document = window.document,
+    document = window.document,//用变量缓存document对象
     elementDisplay = {}, classCache = {},
     cssNumber = { 'column-count': 1, 'columns': 1, 'font-weight': 1, 'line-height': 1,'opacity': 1, 'z-index': 1, 'zoom': 1 },
     fragmentRE = /^\s*<(\w+|!)[^>]*>/,
@@ -46,21 +46,63 @@ var Zepto = (function() {
     },
     isArray = Array.isArray ||
       function(object){ return object instanceof Array }
-
+  /**
+   * matches：精确匹配
+   * @param element: element对象
+   * @param selector: 选择器
+   * @returns {*}
+   */
+  /**
+   *matches
+   * 英 [ˈmætʃɪz]   美 [ˈmætʃɪz]
+   * n.
+   * 火柴;比赛;竞赛;敌手;旗鼓相当的人
+   * v.
+   * 般配;相配;相同;相似;相一致;找相称(或相关)的人(或物);配对
+   * match的第三人称单数和复数
+   */
   zepto.matches = function(element, selector) {
+    /**
+     * 如果选择器不存在空或element不存在或element的nodeType不为1，则返回
+     * */
     if (!selector || !element || element.nodeType !== 1) return false
+    /**
+     * 得到element精确选择器
+     * @type {((selectors: string) => boolean) | *}
+     */
     var matchesSelector = element.webkitMatchesSelector || element.mozMatchesSelector ||
-                          element.oMatchesSelector || element.matchesSelector
-    if (matchesSelector) return matchesSelector.call(element, selector)
+                          element.oMatchesSelector || element.matchesSelector;
+    /**
+     * 精确匹配选择器存在,返回精确匹配结果
+     */
+    if (matchesSelector) return matchesSelector.call(element, selector);
     // fall back to performing a selector:
-    var match, parent = element.parentNode, temp = !parent
-    if (temp) (parent = tempParent).appendChild(element)
-    match = ~zepto.qsa(parent, selector).indexOf(element)
-    temp && tempParent.removeChild(element)
+    /**
+     * 新建元素父对象，临时对象不等于父对象
+     * */
+    var match, parent = element.parentNode, temp = !parent;
+    /**
+     * 如果temp存在，为temp指定一个div作为父节点，并将element对象添加进入父对象
+     * */
+    if (temp) (parent = tempParent).appendChild(element);
+    /**
+     * 调用匹配函数对象
+     * 调用匹配函数对象，并查找element对象
+     * */
+    match = ~zepto.qsa(parent, selector).indexOf(element);
+    /**
+     * 删除element子对象
+     * */
+    temp && tempParent.removeChild(element);
     return match
-  }
+  };
 
   function type(obj) {
+    /**
+     * 如果对象为空，将空对象转化为String对象，
+     * 如果传入的obj不为空，对象toString,
+     * 类转化为类型如果不能转化返回为"object"
+     * */
     return obj == null ? String(obj) :
       class2type[toString.call(obj)] || "object"
   }
