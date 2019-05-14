@@ -106,17 +106,33 @@ var Zepto = (function() {
     return obj == null ? String(obj) :
       class2type[toString.call(obj)] || "object"
   }
-
+ /**
+  * 是否为方法
+  * */
   function isFunction(value) { return type(value) == "function" }
+  /**
+   * 是否为window对象
+   * */
   function isWindow(obj)     { return obj != null && obj == obj.window }
+  /**
+   * 是否是Document对象
+   * */
   function isDocument(obj)   { return obj != null && obj.nodeType == obj.DOCUMENT_NODE }
+  /**
+   * 是否为对象
+   * */
   function isObject(obj)     { return type(obj) == "object" }
+  /**
+   * 是否为原型对象
+   * */
   function isPlainObject(obj) {
     return isObject(obj) && !isWindow(obj) && Object.getPrototypeOf(obj) == Object.prototype
   }
+  //如果是类数组
   function likeArray(obj) { return typeof obj.length == 'number' }
-
+  //去除数组中空对象
   function compact(array) { return filter.call(array, function(item){ return item != null }) }
+
   function flatten(array) { return array.length > 0 ? $.fn.concat.apply([], array) : array }
   camelize = function(str){ return str.replace(/-+(.)?/g, function(match, chr){ return chr ? chr.toUpperCase() : '' }) }
   function dasherize(str) {
@@ -126,43 +142,188 @@ var Zepto = (function() {
            .replace(/_/g, '-')
            .toLowerCase()
   }
+  //去重
+    /**
+     * 结合数组的filter方法，
+     * 查看数组的某项出现的索引是不是与idx相等，
+     * 不相等，肯定出现过2次以上，即将其过滤掉。
+     * 其实结合es6中的Set数据结构，可以很方便的做到数组去重。
+     * */
   uniq = function(array){ return filter.call(array, function(item, idx){ return array.indexOf(item) == idx }) }
 
+    /**
+     * class正则校验
+     * @param name
+     * @returns {RegExp}
+     */
   function classRE(name) {
     return name in classCache ?
       classCache[name] : (classCache[name] = new RegExp('(^|\\s)' + name + '(\\s|$)'))
   }
-
+  /**
+   * 或许被添加Px
+   * */
   function maybeAddPx(name, value) {
     return (typeof value == "number" && !cssNumber[dasherize(name)]) ? value + "px" : value
   }
-
+  /**
+   * 默认显示
+   * param:nodeName
+   * */
   function defaultDisplay(nodeName) {
-    var element, display
+    var element, display;
+    /**
+     * 如果elementDisplay没有nodeName不存在
+     * */
     if (!elementDisplay[nodeName]) {
-      element = document.createElement(nodeName)
-      document.body.appendChild(element)
-      display = getComputedStyle(element, '').getPropertyValue("display")
-      element.parentNode.removeChild(element)
-      display == "none" && (display = "block")
+      element = document.createElement(nodeName);//创建element对象
+      document.body.appendChild(element);//将element对象添加到body中
+        /**
+         *Window.getComputedStyle()方法返回一个对象，
+         * 该对象在应用活动样式表并解析这些值可能包含的任何基本计算后报告元素的所有CSS属性的值。
+         * 私有的CSS属性值可以通过对象提供的API或通过简单地使用CSS属性名称进行索引来访问。
+         * 语法节
+         * let style = window.getComputedStyle(element, [pseudoElt]);
+         * element
+         * 用于获取计算样式的Element。
+         * pseudoElt 可选
+         * 指定一个要匹配的伪元素的字符串。必须对普通元素省略（或null）。
+         * 注意：在Gecko2.0 (Firefox 4 / Thunderbird 3.3 / SeaMonkey 2.1)之前版本，参数pseudoElt是必要的。
+         * 如果为null，则不指定其他主要浏览器必须指定此参数。Gecko已经更改为匹配其他浏览器的行为。
+         * 返回的style是一个实时的 CSSStyleDeclaration 对象，当元素的样式更改时，它会自动更新本身。
+         * */
+        /**
+         * 得到display属性值
+         * */
+      display = getComputedStyle(element, '').getPropertyValue("display");
+      /**
+       * 得到element父对象删除子对象
+       * */
+      element.parentNode.removeChild(element);
+      /**
+       * 如果为none，display赋值为block
+       * */
+      display == "none" && (display = "block");
+      /**
+       * 为elementDisplay空对象的nodeName属性赋值
+       * */
       elementDisplay[nodeName] = display
     }
-    return elementDisplay[nodeName]
+    return elementDisplay[nodeName];//如果存在则放回nodeName对应的值
   }
-
+  /**
+   *得到子对象
+   * */
   function children(element) {
-    return 'children' in element ?
+    /**
+     * slice() 方法可从已有的数组中返回选定的元素。
+     * 语法
+     * arrayObject.slice(start,end)
+     * 参数	描述
+     * start	必需。规定从何处开始选取。如果是负数，那么它规定从数组尾部开始算起的位置。
+     * 也就是说，-1 指最后一个元素，-2 指倒数第二个元素，以此类推。
+     * end	可选。规定从何处结束选取。该参数是数组片断结束处的数组下标。
+     * 如果没有指定该参数，那么切分的数组包含从 start 到数组结束的所有元素。
+     * 如果这个参数是负数，那么它规定的是从数组尾部开始算起的元素。
+     * 返回值
+     * 返回一个新的数组，包含从 start 到 end （不包括该元素）的 arrayObject 中的元素。
+     * 说明
+     * 请注意，该方法并不会修改数组，而是返回一个子数组。如果想删除数组中的一段元素，应该使用方法 Array.splice()。
+     * 提示和注释
+     * 注释：您可使用负值从数组的尾部选取元素。
+     * 注释：如果 end 未被规定，那么 slice() 方法会选取从 start 到数组结尾的所有元素。
+     * */
+      /**
+       * 如果对象中含有children属性，返回对象中的children属性对象，否则的到所有子对象列表的nodeType为1的对象
+       * */
+      /**
+       * nodeType 属性返回以数字值返回指定节点的节点类型。
+       * 如果节点是元素节点，则 nodeType 属性将返回 1。
+       * 如果节点是属性节点，则 nodeType 属性将返回 2。
+       * */
+      /**
+       *NodeType	Named Constant
+       * 1	ELEMENT_NODE
+       * 2	ATTRIBUTE_NODE
+       * 3	TEXT_NODE
+       * 4	CDATA_SECTION_NODE
+       * 5	ENTITY_REFERENCE_NODE
+       * 6	ENTITY_NODE
+       * 7	PROCESSING_INSTRUCTION_NODE
+       * 8	COMMENT_NODE
+       * 9	DOCUMENT_NODE
+       * 10	DOCUMENT_TYPE_NODE
+       * 11	DOCUMENT_FRAGMENT_NODE
+       * 12	NOTATION_NODE
+       * */
+      return 'children' in element ?
       slice.call(element.children) :
       $.map(element.childNodes, function(node){ if (node.nodeType == 1) return node })
   }
 
   // `$.zepto.fragment` takes a html string and an optional tag name
+    /**
+     *fragment
+     * 英[ˈfræɡmənt , fræɡˈment]
+     * 美[ˈfræɡmənt , fræɡˈment]
+     * n.	碎片; 片段;
+     * v.	(使) 碎裂，破裂，分裂;
+     * */
+     /**
+      * takes
+      * 英 [teɪks]   美 [teɪks]
+      * v.
+      * 携带;拿走;取走;运走;带去;引领;使达到，把…推向，把…带到(另一个层次、层面等)
+      * take的第三人称单数
+      * */
+     /**
+      * optional
+      * 英 [ˈɒpʃənl]   美 [ˈɑːpʃənl]
+      * adj.
+      * 可选择的;选修的
+      * 记忆技巧：option 选择 + al …的 → 可选择的
+      * */
   // to generate DOM nodes nodes from the given html string.
+     /**
+      * 英 [ˈdʒenəreɪt] 美 [ˈdʒɛnəˌret]
+      * vt. 形成，造成；产生物理反应；产生（后代）；引起
+      * 网 络
+      * 产生； 生成； 发生； 引起 过去式：
+      * generated 过去分词：generated
+      * 现在分词：generating
+      * 第三人称单数：generates
+      * */
   // The generated DOM nodes are returned as an array.
   // This function can be overriden in plugins for example to make
+     /**
+      * overridden生词本 低频词，记不记随你啦！
+      * 英 [ˌəʊvə'rɪdn] 美 [ˌoʊvə'rɪdn]
+      * v. 越控( override的过去分词 )；
+      * （以权力）否决；优先于；比…更重要
+      * 网 络
+      * 被覆盖； 践踏； 覆写； 凌越
+      * */
   // it compatible with browsers that don't support the DOM fully.
+     /**
+      * 英 [kəmˈpætəbl]
+      * 美 [kəmˈpætəbəl]
+      * adj. 兼容的，相容的；和谐的，协调的；
+      * [生物学]亲和的；可以并存的，能共处的
+      * 网 络
+      * 兼容； 兼容的； 相容； 兼容模式
+      * */
+     /**
+      * fully生词本 高频词
+      * 英 [ˈfʊli] 美 [ˈfʊli]
+      * adv. 充分地；完全地；足足；彻底地
+      * 网 络
+      * 完全； 完全地； 充分； 充分地
+      * */
   zepto.fragment = function(html, name, properties) {
-    var dom, nodes, container
+    /**
+     * 定义dom对象变量，节点集合对象和容器对象
+     * */
+      var dom, nodes, container;
 
     // A special case optimization for a single tag
     if (singleTagRE.test(html)) dom = $(document.createElement(RegExp.$1))
