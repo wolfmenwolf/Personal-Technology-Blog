@@ -326,92 +326,297 @@ var Zepto = (function() {
       var dom, nodes, container;
 
     // A special case optimization for a single tag
-    if (singleTagRE.test(html)) dom = $(document.createElement(RegExp.$1))
-
+      /**
+       * 高频词
+       * 英 [ˈspeʃl] 美 [ˈspɛʃəl]
+       * adj. 特殊的；专门的；专用的；重要的
+       * n. 专车；特价；特刊；特约稿
+       * 网 络
+       * 特殊； 特别； 特别的；
+       * 专题 复数：specials
+       * 比较级：more special
+       * 最高级：most special
+       * */
+      /**
+       * optimization
+       * 英 [ˌɒptɪmaɪ'zeɪʃən] 美 [ˌɑptəmɪˈzeʃən]
+       * n. 最佳化，最优化；优选法；优化组合
+       * 网 络
+       * 优化； 最佳化； 最优化； 优化问题
+       * */
+      /**
+       * 验证是否为单个标记，根据表达式创建element对象
+       * */
+    if (singleTagRE.test(html)) dom = $(document.createElement(RegExp.$1));
+   //如果dom存在
     if (!dom) {
-      if (html.replace) html = html.replace(tagExpanderRE, "<$1></$2>")
-      if (name === undefined) name = fragmentRE.test(html) && RegExp.$1
-      if (!(name in containers)) name = '*'
-
-      container = containers[name]
-      container.innerHTML = '' + html
+        /**
+         * 如果传入的html有replace属性，则对html进行替换
+         * */
+      if (html.replace) html = html.replace(tagExpanderRE, "<$1></$2>");
+      //如果name没定义，则测试html为name赋值
+      if (name === undefined) name = fragmentRE.test(html) && RegExp.$1;
+      //如果name不在容器中，name为'*';
+      if (!(name in containers)) name = '*';
+      //下面语句，name就在containers中。
+      container = containers[name];//得到对应容器对象
+      container.innerHTML = '' + html;//容器插入html
+        //取出所有子容器并遍历删除
       dom = $.each(slice.call(container.childNodes), function(){
         container.removeChild(this)
       })
     }
-
+     //如果属性在原型对象中
     if (isPlainObject(properties)) {
-      nodes = $(dom)
+      nodes = $(dom);//找到节点集合
+        //遍历原型中的属性
       $.each(properties, function(key, value) {
-        if (methodAttributes.indexOf(key) > -1) nodes[key](value)
-        else nodes.attr(key, value)
+          //如果方法属性包含了这个key,则节点集合中取得此key的value值
+        if (methodAttributes.indexOf(key) > -1) nodes[key](value);
+        else nodes.attr(key, value);//如果不含有，为此ke赋值
       })
     }
 
-    return dom
-  }
+    return dom//返回dom
+  };
 
   // `$.zepto.Z` swaps out the prototype of the given `dom` array
+    /**
+     * swaps中频词,[swɔps]
+     n. 交换( swap的名词复数 )；
+     交换物，被掉换者 v. 交换（工作）( swap的第三人称单数 )；
+     用…替换，把…换成，掉换（过来）
+     网 络
+     互换合约； 互换交易； 互换协议； 金融互换
+     * */
   // of nodes with `$.fn` and thus supplying all the Zepto functions
+    /**
+     * thus生词本 高频词
+     * 英 [ðʌs] 美 [ðʌs]
+     * adv. 于是，因此；如此，这样，像这样，
+     * 例如；到这程度，到这地步，这么；如下
+     * conj. 因此
+     * 网 络
+     * 因而； 因此； 从而； 如此
+     * */
+    /**
+     * supplying 高频词[səˈplaiŋ]
+     * v. 供给( supply的现在分词 )；
+     * 补充；弥补（缺陷、损失等）；向…提供（物资等）
+     * 网 络
+     * 作为航天； 提供格式条款； 信息保障； 提供格式
+     * */
   // to the array. Note that `__proto__` is not supported on Internet
+    /**
+     * supported生词本 高频词
+     * 英 [sə'pɔ:tɪd]
+     * 美 [sə'pɔtɪd]
+     * v. 支持( support的过去式和过去分词 )；帮助；支撑；维持
+     * 网 络
+     * 负载； 支； 支承的； 负载型
+     * */
   // Explorer. This method can be overriden in plugins.
+    /**
+     * overthrow生词本 中频词
+     * 英 [ˌəʊvəˈθrəʊ]
+     * 美 [ˌoʊvərˈθroʊ]
+     * vt. 打倒，推翻；使屈服，征服；使瓦解；撞倒
+     * n. 推翻，打倒；打翻；倾倒；[棒]投得过高的球
+     * 网 络
+     * 推翻； 颠覆； 打倒； 风桥
+     * */
   zepto.Z = function(dom, selector) {
-    dom = dom || []
-    dom.__proto__ = $.fn
-    dom.selector = selector || ''
+    dom = dom || [];
+    dom.__proto__ = $.fn;
+    dom.selector = selector || '';
     return dom
-  }
+  };
 
   // `$.zepto.isZ` should return `true` if the given object is a Zepto
   // collection. This method can be overriden in plugins.
+    /**
+     * 如果一个对象在Zepto集合中，返回为ture,这个方法在插件中可以覆盖
+     * */
   zepto.isZ = function(object) {
     return object instanceof zepto.Z
   }
 
   // `$.zepto.init` is Zepto's counterpart to jQuery's `$.fn.init` and
+    /**
+     * counterpart 中频词
+     * 英 [ˈkaʊntəpɑ:t] 美 [ˈkaʊntərpɑrt]
+     * n. 配对物；副本；相对物；极相似的人或物
+     * 网 络
+     * 副本； 配对物； 对应物； 复本
+     * @param selector
+     * @param context
+     * @returns {*}
+     */
   // takes a CSS selector and an optional context (and handles various
+    /**
+     * takes 高频词
+     * [teiks]
+     * v. 拿( take的第三人称单数 )；
+     * 接受；学习；取得
+     * 网 络
+     * 取得了； 要花； 需要花； 取景镜头
+     * @param selector
+     * @param context
+     * @returns {*}
+     */
+    /**
+     * optional低频词
+     * 英 [ˈɒpʃənl]
+     * 美 [ˈɑpʃənl]
+     * adj. 可选择的；随意的，任意的；非强制的；选修科目
+     * 网 络
+     * 可选； 可选择的； 非强制的； 可选的
+     * @param selector
+     * @param context
+     * @returns {*}
+     */
+    /**
+     * context中频词
+     * 英 [ˈkɒntekst]
+     * 美 [ˈkɑntekst]
+     * n. 上下文；背景；环境；语境
+     * 网 络
+     * 上下文； 语境； 情境； 脉络
+     * @param selector
+     * @param context
+     * @returns {*}
+     */
+    /**
+     * 高频词英 ['hændlz]
+     * 美 ['hændlz]
+     * n. （织物、毛皮等的）手感( handle的名词复数 )；
+     * 手柄；举动；柄状物 v. 操作( handle的第三人称单数 )；
+     * 容易╱难以)驾驶；操纵；行动
+     * 网 络
+     * 控键； 控点； 操作点； 手柄上
+     * @param selector
+     * @param context
+     * @returns {*}
+     */
+    /**
+     * various生词本 高频词，一定要记住哦！英 [ˈveəriəs] 美 [ˈveriəs]
+     adj. 各种各样的；多方面的；许多的；各个的，个别的
+     网 络
+     各种各样的； 不同的； 不同； 多方面
+     * @param selector
+     * @param context
+     * @returns {*}
+     */
   // special cases).
+    /**
+     * special 高频词
+     * 英 [ˈspeʃl]
+     * 美 [ˈspɛʃəl]
+     * adj. 特殊的；专门的；专用的；重要的
+     * n. 专车；特价；特刊；特约稿
+     * @param selector
+     * @param context
+     * @returns {*}
+     */
+    /**
+     * cases 中频词
+     * 英 [keɪsɪs]
+     * 美 [keɪsɪs]
+     * n. 案例；病例( case的名词复数 )；
+     * （需特别对待或注意的）人；事例；容器
+     * 网 络
+     * 情况下； 例； 例患者； 患者
+     * @param selector
+     * @param context
+     * @returns {*}
+     */
   // This method can be overriden in plugins.
   zepto.init = function(selector, context) {
-    var dom
+    var dom;//新建变量dom
     // If nothing given, return an empty Zepto collection
-    if (!selector) return zepto.Z()
-    // Optimize for string selectors
+      /**
+       * given中频词
+       * 英 [ˈgɪvn]
+       * 美 [ˈɡɪvən]
+       * adj. 指定的，确定的；假设的，假定的；有…倾向的；赠送的
+       * prep. （表示原因）考虑到；（表示假设）倘若，假定
+       * n. 假设
+       * v. 给予，赠送( give的过去分词)
+       * 网 络
+       * 送给； 给出； 发给； 给定
+       * */
+      /**
+       * 如果没有指定选择器，则返回zepto.Z()；函数
+       * */
+    if (!selector) return zepto.Z();
+    // Optimize for string selectors 优化字符串选择器
+        /**
+         * Optimize
+         * 英 [ˈɒptɪmaɪz]
+         * 美 [ˈɑptɪmaɪz]
+         * vt. 使最优化，使尽可能有效
+         * 网 络
+         * 优化编辑器； 最佳化； 优化；
+         * 优化服务 过去式：
+         * optimized 过去分词：optimized
+         * 现在分词：optimizing
+         * 第三人称单数：optimizes
+         * */
     else if (typeof selector == 'string') {
-      selector = selector.trim()
+      selector = selector.trim();
       // If it's a html fragment, create nodes from it
       // Note: In both Chrome 21 and Firefox 15, DOM error 12
       // is thrown if the fragment doesn't begin with <
       if (selector[0] == '<' && fragmentRE.test(selector))
-        dom = zepto.fragment(selector, RegExp.$1, context), selector = null
+        dom = zepto.fragment(selector, RegExp.$1, context), selector = null;
       // If there's a context, create a collection on that context first, and select
       // nodes from there
-      else if (context !== undefined) return $(context).find(selector)
+      else if (context !== undefined) return $(context).find(selector);
       // If it's a CSS selector, use it to select nodes.
       else dom = zepto.qsa(document, selector)
     }
     // If a function is given, call it when the DOM is ready
-    else if (isFunction(selector)) return $(document).ready(selector)
+    else if (isFunction(selector)) return $(document).ready(selector);
     // If a Zepto collection is given, just return it
-    else if (zepto.isZ(selector)) return selector
+        /**
+         * given中频词
+         * 英 [ˈgɪvn]
+         * 美 [ˈɡɪvən]
+         * adj. 指定的，确定的；假设的，假定的；有…倾向的；赠送的
+         * prep. （表示原因）考虑到；（表示假设）倘若，假定
+         * n. 假设
+         * v. 给予，赠送( give的过去分词)
+         * 网 络
+         * 送给； 给出； 发给； 给定
+         * */
+    else if (zepto.isZ(selector)) return selector;
     else {
       // normalize array if an array of nodes is given
-      if (isArray(selector)) dom = compact(selector)
+        /**
+         * normalize
+         * 低频词
+         * 英 [ˈnɔ:məlaɪz]
+         * 美 [ˈnɔrməlaɪz]
+         * vt. 使正常化；使标准化
+         * 网 络
+         * 正火； 使标准化
+         * */
+      if (isArray(selector)) dom = compact(selector);
       // Wrap DOM nodes.
       else if (isObject(selector))
-        dom = [selector], selector = null
+        dom = [selector], selector = null;
       // If it's a html fragment, create nodes from it
       else if (fragmentRE.test(selector))
-        dom = zepto.fragment(selector.trim(), RegExp.$1, context), selector = null
+        dom = zepto.fragment(selector.trim(), RegExp.$1, context), selector = null;
       // If there's a context, create a collection on that context first, and select
       // nodes from there
-      else if (context !== undefined) return $(context).find(selector)
+      else if (context !== undefined) return $(context).find(selector);
       // And last but no least, if it's a CSS selector, use it to select nodes.
       else dom = zepto.qsa(document, selector)
     }
     // create a new Zepto collection from the nodes found
     return zepto.Z(dom, selector)
-  }
+  };
 
   // `$` will be the base `Zepto` object. When calling this
   // function just call `$.zepto.init, which makes the implementation
