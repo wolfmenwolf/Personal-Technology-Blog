@@ -602,13 +602,29 @@ var Zepto = (function() {
          * 正火； 使标准化
          * */
       if (isArray(selector)) dom = compact(selector);
-      // Wrap DOM nodes.
-      else if (isObject(selector))
-        dom = [selector], selector = null;
+      // Wrap DOM nodes.围绕Dom nodes
+      else if (isObject(selector)) //选择器是对象
+        dom = [selector], selector = null;//得到对象，旋转器清空
       // If it's a html fragment, create nodes from it
-      else if (fragmentRE.test(selector))
+      else if (fragmentRE.test(selector))//测试片段中是否有选择器
         dom = zepto.fragment(selector.trim(), RegExp.$1, context), selector = null;
       // If there's a context, create a collection on that context first, and select
+          /**
+           * context 中频词
+           * 英 [ˈkɒntekst]
+           * 美 [ˈkɑntekst]
+           * n. 上下文；背景；环境；语境
+           * 网 络
+           * 上下文； 语境； 情境； 脉络
+           * */
+          /**
+           * collection高频词
+           * 英 [kəˈlekʃn]
+           * 美 [kəˈlɛkʃən]
+           * n. 收集，采集；征收；收藏品；募捐
+           * 网 络
+           * 集合； 收藏； 托收； 收集物
+           * */
       // nodes from there
       else if (context !== undefined) return $(context).find(selector);
       // And last but no least, if it's a CSS selector, use it to select nodes.
@@ -620,47 +636,103 @@ var Zepto = (function() {
 
   // `$` will be the base `Zepto` object. When calling this
   // function just call `$.zepto.init, which makes the implementation
+    /**
+     * makes高频词
+     * 英 [meɪks] 美 [meɪks]
+     * v. 使( make的第三人称单数 )；成为；做；认为
+     * 网 络
+     * 使得； 使人； 造就； 进行了
+     * */
+    /**
+     *中频词
+     * 英 [ˌɪmplɪmen'teɪʃn]
+     * 美 [ˌɪmplɪmənˈteʃən]
+     * n. 成就；贯彻；implement的变形；安装启用
+     * 网 络
+     * 实现； 落实； 执行情况； 推行
+     * */
   // details of selecting nodes and creating Zepto collections
   // patchable in plugins.
+    /**
+     * patch中频词
+     * 英 [pætʃ]
+     * 美 [pætʃ]
+     * n. 补丁，补片；眼罩；斑点；小块
+     * vt. 修补，拼凑；暂时遮掩一下；修理，平息（吵架等）；用美人斑装饰（脸）
+     * vi. 打补丁
+     * 网 络
+     * 补丁； 修补； 面片； 斑块
+     * */
   $ = function(selector, context){
     return zepto.init(selector, context)
-  }
+  };
 
   function extend(target, source, deep) {
-    for (key in source)
+    for (key in source)//遍历原对象
+        //如果是深继承并且原对象的对象值是在原型对象或是数组
       if (deep && (isPlainObject(source[key]) || isArray(source[key]))) {
+          /**
+           * 如果值是在原型对象中，并且目标对象不在原型对象中
+           */
         if (isPlainObject(source[key]) && !isPlainObject(target[key]))
-          target[key] = {}
-        if (isArray(source[key]) && !isArray(target[key]))
-          target[key] = []
-        extend(target[key], source[key], deep)
+          target[key] = {};//则目标对象设置为空
+        if (isArray(source[key]) && !isArray(target[key]))//如果源对象是数组，目标对象不是数组
+          target[key] = [];//目标对象置为空数组
+        extend(target[key], source[key], deep)//递归调用
       }
+      //如果原对象不为undefined，用源对象给目标对象赋值
       else if (source[key] !== undefined) target[key] = source[key]
   }
 
   // Copy all but undefined properties from one or more
+    /**
+     * undefined
+     * 英 [ˌʌndɪˈfaɪnd]
+     * 美 [ˌʌndɪˈfaɪnd]
+     * adj. 未阐明的；未限定的
+     * 网 络
+     * 未定义； 未定义的； 不明确的； 无定义
+     * */
   // objects to the `target` object.
   $.extend = function(target){
-    var deep, args = slice.call(arguments, 1)
-    if (typeof target == 'boolean') {
-      deep = target
-      target = args.shift()
+    var deep, args = slice.call(arguments, 1);//转化为数组得到索引为一个的元素
+    if (typeof target == 'boolean') {//如果目标对象为boolean类型
+      deep = target;
+      target = args.shift();//弹出第一个作为target
     }
-    args.forEach(function(arg){ extend(target, arg, deep) })
+    args.forEach(function(arg){ extend(target, arg, deep) });
     return target
-  }
+  };
 
   // `$.zepto.qsa` is Zepto's CSS selector implementation which
   // uses `document.querySelectorAll` and optimizes for some special cases, like `#id`.
   // This method can be overriden in plugins.
   zepto.qsa = function(element, selector){
     var found,
-        maybeID = selector[0] == '#',
-        maybeClass = !maybeID && selector[0] == '.',
+        maybeID = selector[0] == '#',//或许是ID
+        maybeClass = !maybeID && selector[0] == '.',//或许是class
         nameOnly = maybeID || maybeClass ? selector.slice(1) : selector, // Ensure that a 1 char tag name still gets checked
-        isSimple = simpleSelectorRE.test(nameOnly)
+        isSimple = simpleSelectorRE.test(nameOnly);
+    /**
+     * 第一是Document元素，第二是简单选择器，并且是id
+     * */
     return (isDocument(element) && isSimple && maybeID) ?
+        //如果是得到found的dom元素，并且转化为数组，否则返回空数组
       ( (found = element.getElementById(nameOnly)) ? [found] : [] ) :
+        /**
+         *1	ELEMENT_NODE
+         * 2	ATTRIBUTE_NODE
+         * 3	TEXT_NODE
+         * 4	CDATA_SECTION_NODE
+         * 5	ENTITY_REFERENCE_NODE
+         * 6	ENTITY_NODE
+         * 7	PROCESSING_INSTRUCTION_NODE
+         * 8	COMMENT_NODE
+         * 9	DOCUMENT_NODE
+         * 10	DOCUMENT_TYPE_NODE
+         * 11	DOCUMENT_FRAGMENT_NODE
+         * 12	NOTATION_NODE
+         * */
       (element.nodeType !== 1 && element.nodeType !== 9) ? [] :
       slice.call(
         isSimple && !maybeID ?
@@ -668,9 +740,10 @@ var Zepto = (function() {
           element.getElementsByTagName(selector) : // Or a tag
           element.querySelectorAll(selector) // Or it's not simple, and we need to query all
       )
-  }
+  };
 
   function filtered(nodes, selector) {
+      //如果选择器为空返回$(nodes),否则用选择器过滤$(nodes)
     return selector == null ? $(nodes) : $(nodes).filter(selector)
   }
 
