@@ -1,0 +1,336 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>CSS3菱形布局 - 素材牛（www.sucainiu.com）</title>
+<script id="jqbb" src="http://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
+<style type="text/css">
+body { background-color: #fff }
+@charset "utf-8";
+	/* CSS Document */
+* {
+	margin:0;
+	padding:0;
+}
+body {
+	font-family:'Microsoft YaHei';
+	font-size:12px;
+}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,blockquote {
+	padding:0;
+	margin:0;
+}
+table,td,tr,th {
+	font-size:12px;
+}
+li {
+	list-style-type:none;
+}
+table {
+	margin:0 auto;
+}
+img {
+	vertical-align:top;
+	border:0;
+}
+ol,ul {
+	list-style:none;
+}
+caption,th {
+	text-align:left;
+}
+a {
+	text-decoration:none;
+	color:#000;
+}
+a:hover {
+	color:#000;
+	text-decoration:none;
+}
+.main1140 {
+	width:1140px;
+	margin:0 auto;
+	overflow:hidden;
+}
+/*拍摄服务流程开始*/
+.process-box {
+	width:1140px;
+	height:450px;
+}
+.process-box ul {
+	width:1140px;
+}
+.process-box ul li {
+	width:196px;
+	height:196px;
+	float:left;
+	cursor:pointer;
+	position:relative;
+}
+.process-box ul li .kuang {
+	position:absolute;
+	width:196px;
+	height:196px;
+	-moz-transform:rotate(45deg);
+	-webkit-transform:rotate(45deg);
+	-o-transform:rotate(45deg);
+	transform:rotate(45deg);
+	border:1px solid #ddd;
+	margin-top:42px;
+	margin-left:42px;
+}
+.process-box ul li .kuang1 {
+	top:0;
+	left:0;
+	z-index:1;
+}
+.process-box ul li .kuang2 {
+	left:5px;
+	top:0px;
+	z-index:2;
+}
+.process-box ul li .text1 {
+	width:276px;
+	height:276px;
+	text-align:center;
+	z-index:3;
+	position:absolute;
+	left:7px;
+	top:2px;
+}
+.process-box ul li .text1 .bg {
+	width:276px;
+	height:276px;
+}
+.process-box ul li .text1 .bg1 {
+	background:url(../images/process-img1.png) no-repeat;
+}
+.process-box ul li .text1 .bg2 {
+	background:url(../images/process-img2.png) no-repeat;
+}
+.process-box ul li .text1 .bg3 {
+	background:url(../images/process-img3.png) no-repeat;
+}
+.process-box ul li .text1 .bg4 {
+	background:url(../images/process-img4.png) no-repeat;
+}
+.process-box ul li .text1 .bg5 {
+	background:url(../images/process-img5.png) no-repeat;
+}
+.process-box ul li .text1 .bg6 {
+	background:url(../images/process-img6.png) no-repeat;
+}
+.process-box ul li .text1 .bg7 {
+	background:url(../images/process-img7.png) no-repeat;
+}
+.process-box ul li .text1 .num {
+	padding-top:50px;
+	font-size:86px;
+	color:#dacdc2;
+	font-weight:700;
+}
+.process-box ul li .text1 .title {
+	font-size:15px;
+	color:#422710;
+}
+.process-box ul li .text1 .eng {
+	font-size:12px;
+	color:#b4a078;
+}
+.process-box ul li .text2 {
+	width:276px;
+	height:276px;
+	z-index:4;
+	position:absolute;
+	left:5px;
+	top:0px;
+	display:none;
+}
+.process-box ul li .text2 .mengban {
+	border:1px solid #533b26;
+	position:absolute;
+	z-index:1;
+	width:196px;
+	height:196px;
+	-moz-transform:rotate(45deg);
+	-webkit-transform:rotate(45deg);
+	-o-transform:rotate(45deg);
+	transform:rotate(45deg);
+	background:#533b26;
+	margin-top:42px;
+	margin-left:42px;
+}
+.process-box ul li .text2 .desc {
+	position:absolute;
+	z-index:2;
+	width:140px;
+	height:110px;
+	top:88px;
+	left:70px;
+	font-size:12px;
+	color:#fff;
+	text-align:center;
+	line-height:24px;
+}
+.process-box ul li {
+	margin-right:89px;
+}
+.process-box ul.two li {
+	margin-top:-40px;
+}
+.process-box ul li:hover .text2 {
+	display:block;
+}
+/*拍摄服务流程结束*/
+</style>
+</head>
+
+<body>
+<div class="main1140">
+    <!--拍摄服务流程开始-->
+    <div class="process-box">
+        <ul class="one">
+            <li>
+                <div class="kuang kuang1">
+                </div>
+                <div class="kuang kuang2">
+                </div>
+            </li>
+            <li style="margin-left: -145px;">
+                <div class="kuang kuang1">
+                </div>
+                <div class="kuang kuang2">
+                </div>
+                <div class="text1">
+                    <div class="bg bg1">
+                        <p class="num">1</p>
+                        <p class="title">确定套系</p>
+                        <p class="eng">Determine the set of system</p>
+                    </div>
+                </div>
+                <div class="text2">
+                    <div class="mengban"></div>
+                    <p class="desc">1在约定的时间、地点进行拍摄，请您提前备好服装及化妆，根据选择的拍摄套系我们会提前给您提出很好的建议。</p>
+                </div>
+            </li>
+            <li>
+                <div class="kuang kuang1">
+                </div>
+                <div class="kuang kuang2">
+                </div>
+                <div class="text1">
+                    <div class="bg bg2">
+                        <p class="num">2</p>
+                        <p class="title">预约时间</p>
+                        <p class="eng">make an appointment time</p>
+                    </div>
+                </div>
+                <div class="text2">
+                    <div class="mengban"></div>
+                    <p class="desc">2在约定的时间、地点进行拍摄，请您提前备好服装及化妆，根据选择的拍摄套系我们会提前给您提出很好的建议。</p>
+                </div>
+            </li>
+            <li>
+                <div class="kuang kuang1">
+                </div>
+                <div class="kuang kuang2">
+                </div>
+                <div class="text1">
+                    <div class="bg bg3">
+                        <p class="num">3</p>
+                        <p class="title">支付订金</p>
+                        <p class="eng">To pay a deposit</p>
+                    </div>
+                </div>
+                <div class="text2">
+                    <div class="mengban"></div>
+                    <p class="desc">3在约定的时间、地点进行拍摄，请您提前备好服装及化妆，根据选择的拍摄套系我们会提前给您提出很好的建议。</p>
+                </div>
+            </li>
+            <li style="margin-left: -145px;">
+                <div class="kuang kuang1">
+                </div>
+                <div class="kuang kuang2">
+                </div>
+            </li>
+        </ul>
+        <ul class="two">
+            <li>
+                <div class="kuang kuang1">
+                </div>
+                <div class="kuang kuang2">
+                </div>
+                <div class="text1">
+                    <div class="bg bg4">
+                        <p class="num">4</p>
+                        <p class="title">确定套系</p>
+                        <p class="eng">Determine the set of system</p>
+                    </div>
+                </div>
+                <div class="text2">
+                    <div class="mengban"></div>
+                    <p class="desc">4在约定的时间、地点进行拍摄，请您提前备好服装及化妆，根据选择的拍摄套系我们会提前给您提出很好的建议。</p>
+                </div>
+            </li>
+            <li>
+                <div class="kuang kuang1">
+                </div>
+                <div class="kuang kuang2">
+                </div>
+                <div class="text1">
+                    <div class="bg bg5">
+                        <p class="num">5</p>
+                        <p class="title">拍摄准备</p>
+                        <p class="eng">Taken to prepare</p>
+                    </div>
+                </div>
+                <div class="text2">
+                    <div class="mengban"></div>
+                    <p class="desc">5在约定的时间、地点进行拍摄，请您提前备好服装及化妆，根据选择的拍摄套系我们会提前给您提出很好的建议。</p>
+                </div>
+            </li>
+            <li>
+                <div class="kuang kuang1">
+                </div>
+                <div class="kuang kuang2">
+                </div>
+                <div class="text1">
+                    <div class="bg bg6">
+                        <p class="num">6</p>
+                        <p class="title">精修照片</p>
+                        <p class="eng">PS ?photo</p>
+                    </div>
+                </div>
+                <div class="text2">
+                    <div class="mengban"></div>
+                    <p class="desc">6在约定的时间、地点进行拍摄，请您提前备好服装及化妆，根据选择的拍摄套系我们会提前给您提出很好的建议。</p>
+                </div>
+            </li>
+            <li>
+                <div class="kuang kuang1">
+                </div>
+                <div class="kuang kuang2">
+                </div>
+                <div class="text1">
+                    <div class="bg bg7">
+                        <p class="num">7</p>
+                        <p class="title">交付作品</p>
+                        <p class="eng">Delivery work</p>
+                    </div>
+                </div>
+                <div class="text2">
+                    <div class="mengban"></div>
+                    <p class="desc">7在约定的时间、地点进行拍摄，请您提前备好服装及化妆，根据选择的拍摄套系我们会提前给您提出很好的建议。</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <!--拍摄服务流程结束-->
+</div>
+
+<script>
+
+</script>
+<script type="text/javascript" async src="//idm-su.baidu.com/su.js"></script>
+</body>
+</html>

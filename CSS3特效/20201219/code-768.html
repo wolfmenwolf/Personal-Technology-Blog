@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>css3transition运动效果对比 - 素材牛（www.sucainiu.com）</title>
+<script id="jqbb" src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<style type="text/css">
+body { background-color: #fff }
+.c1,.c2,.c3,.c4,.c5 {
+	margin-top:10px;
+	color:#fff;
+}
+.c1 {
+	background:blue;
+	width:100px;
+	height:50px;
+	transition:width 10s;
+	transition-timing-function:linear;
+}
+.c:hover .c1 {
+	width:1000px;
+}
+.c2 {
+	background:blue;
+	width:100px;
+	height:50px;
+	transition:width 10s;
+	transition-timing-function:ease;
+}
+.c:hover .c2 {
+	width:1000px;
+}
+.c3 {
+	background:blue;
+	width:100px;
+	height:50px;
+	transition:width 10s;
+	transition-timing-function:ease-in;
+}
+.c:hover .c3 {
+	width:1000px;
+}
+.c4 {
+	background:blue;
+	width:100px;
+	height:50px;
+	transition:width 10s;
+	transition-timing-function:ease-out;
+}
+.c:hover .c4 {
+	width:1000px;
+}
+.c5 {
+	background:blue;
+	width:100px;
+	height:50px;
+	transition:width 10s;
+	transition-timing-function:ease-in-out;
+}
+.c:hover .c5 {
+	width:1000px;
+}
+</style>
+</head>
+
+<body>
+<div class="c" style="background:#f1f1f1;">
+    <div class="c1"> linear</div>
+    <div class="c2">ease</div>
+    <div class="c3">ease-in</div>
+    <div class="c4">ease-out</div>
+    <div class="c5">ease-in-out</div>
+</div>
+
+<script>
+
+</script>
+</body>
+</html>

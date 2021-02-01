@@ -1,0 +1,188 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>纯CSS3实现边框四面加载 - 素材牛（www.sucainiu.com）</title>
+<script id="jqbb" src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<style type="text/css">
+body { background-color: #fff }
+ol,ul{list-style:none}
+.both .navs {
+	border:0px solid #000;
+	width:100%;
+	height:60px;
+	margin-top:10px;
+	padding:0 20px;
+}
+@keyframes LYAnimation {
+	0% {
+	width:0;
+}
+100% {
+	width:100%;
+}
+}@keyframes TBAnimation {
+	0% {
+	height:0;
+}
+100% {
+	height:47px;
+}
+}@keyframes LYAnimationF {
+	0% {
+	width:100%;
+}
+100% {
+	width:0;
+}
+}@keyframes TBAnimationF {
+	0% {
+	height:47px;
+}
+100% {
+	height:0;
+}
+}.both .navs ul {
+	border-left:6px solid #ff3131;
+	width:100%;
+	height:50px;
+	margin-top:5px;
+}
+.both .navs ul li {
+	border:2px solid transparent;
+	width:auto;
+	height:43px;
+	line-height:43px;
+	float:left;
+	padding:0 8px;
+	margin-left:20px;
+	position:relative;
+	cursor:pointer;
+	color:#000;
+	transition:color 0.3s;
+}
+.both .navs ul li .liLineTop,.both .navs ul li .liLineBottom {
+	animation-name:LYAnimationF;
+	animation-duration:0.3s;
+	animation-iteration-count:1;
+	animation-direction:normal;
+	animation-timing-function:linear;
+	animation-fill-mode:both;
+}
+.both .navs ul li .liLineLeft,.both .navs ul li .liLineRight {
+	animation-name:TBAnimationF;
+	animation-duration:0.3s;
+	animation-iteration-count:1;
+	animation-direction:normal;
+	animation-timing-function:linear;
+	animation-fill-mode:both;
+}
+.both .navs ul li .liLineTop,.both .navs ul li .liLineBottom,.both .navs ul li .liLineLeft,.both .navs ul li .liLineRight {
+	display:block;
+	background-color:#f00;
+	position:absolute;
+}
+.both .navs ul li .liLineTop,.both .navs ul li .liLineBottom {
+	width:0;
+	height:2px;
+}
+.both .navs ul li .liLineLeft,.both .navs ul li .liLineRight {
+	width:2px;
+	height:0;
+}
+.both .navs ul li .liLineTop {
+	left:0;
+	top:-2px;
+}
+.both .navs ul li .liLineBottom {
+	right:0;
+	bottom:-2px;
+}
+.both .navs ul li .liLineLeft {
+	left:-2px;
+	bottom:-2px;
+}
+.both .navs ul li .liLineRight {
+	right:-2px;
+	top:-2px;
+}
+.both .navs ul li:hover {
+	color:#ff3131;
+	transition:color 0.3s;
+}
+.both .navs ul li:hover .liLineTop,.both .navs ul li:hover .liLineBottom {
+	animation-name:LYAnimation;
+	animation-duration:0.3s;
+	animation-iteration-count:1;
+	animation-direction:normal;
+	animation-timing-function:linear;
+	animation-fill-mode:both;
+}
+.both .navs ul li:hover .liLineLeft,.both .navs ul li:hover .liLineRight {
+	animation-name:TBAnimation;
+	animation-duration:0.3s;
+	animation-iteration-count:1;
+	animation-direction:normal;
+	animation-timing-function:linear;
+	animation-fill-mode:both;
+}
+.both .navs ul .liActive {
+	border:2px solid #ff3131;
+	color:#ff3131;
+}
+</style>
+<script>
+
+</script>
+</head>
+
+<body>
+<section class="both"><div class="navs">
+    <ul>
+<li class="liActive">
+            demo1
+            <span class="liLineTop"></span>
+            <span class="liLineBottom"></span>
+            <span class="liLineLeft"></span>
+            <span class="liLineRight"></span>
+        </li>
+        <li>
+            demo22
+            <span class="liLineTop"></span>
+            <span class="liLineBottom"></span>
+            <span class="liLineLeft"></span>
+            <span class="liLineRight"></span>
+        </li>
+        <li>
+            demo333
+            <span class="liLineTop"></span>
+            <span class="liLineBottom"></span>
+            <span class="liLineLeft"></span>
+            <span class="liLineRight"></span>
+        </li>
+        <li>
+            demo4444
+            <span class="liLineTop"></span>
+            <span class="liLineBottom"></span>
+            <span class="liLineLeft"></span>
+            <span class="liLineRight"></span>
+        </li>
+        <li>
+            demo55555
+            <span class="liLineTop"></span>
+            <span class="liLineBottom"></span>
+            <span class="liLineLeft"></span>
+            <span class="liLineRight"></span>
+        </li>
+        <li style="margin-top: 10px">
+            demo55555demodemo55555demodemo55555demodemo55555demo
+            <span class="liLineTop"></span>
+            <span class="liLineBottom"></span>
+            <span class="liLineLeft"></span>
+            <span class="liLineRight"></span>
+        </li>
+    </ul>
+</div>
+</section>
+</body>
+</html>

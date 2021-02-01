@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>向下滚动显示返回顶部 - 素材牛（www.sucainiu.com）</title>
+<script id="jqbb" src="http://libs.baidu.com/jquery/1.4.2/jquery.min.js"></script>
+<style type="text/css">
+body { background-color: #fff }
+.div {
+	height:2000px;
+}
+._top {
+	position:fixed;
+	right:0;
+	bottom:30%;
+	line-height:50px;
+	text-align:center;
+	cursor:pointer;
+	width:50px;
+	height:50px;
+	border:1px solid #CCC;
+	display:none;
+	background-color:#333;
+	color:aliceblue;
+}
+</style>
+</head>
+
+<body>
+<div class="div"></div>
+<div class="_top">
+    TOP
+</div>
+
+<script>
+$(function() {
+	$(window).scroll(function() {
+		var _top = $(window).scrollTop();
+		if (_top > 300) {
+			$('._top').fadeIn(600);
+		} else {
+			$('._top').fadeOut(600);
+		}
+	});
+	$("._top").click(function() {
+		$("html,body").animate({
+			scrollTop: 0
+		}, 500);
+	});
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jQuery图片放大滑动，内有详细步骤注释代码 - 素材牛（www.sucainiu.com）</title>
+<script id="jqbb" src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<style type="text/css">
+body { background-color: #fff }
+#a {
+	position:relative;
+	width:300px;
+	height:200px;
+	overflow:hidden;
+	box-shadow:1px 1px 2px 3px #ececec;
+	margin:10px  auto 0;
+}
+#b {
+	position:absolute;
+	top:0px;
+	left:0px;
+	background:url(http://www.jq22.com/demo/jQuery-lbt201701151156/images/img2.jpg);
+	background-size:100% 100%;
+	width:180%;
+	height:130%;
+}
+body {
+	width:100vw;
+	height:100vh;
+	background:transparent;
+}
+.anim {
+	-webkit-animation:largen 200ms 1 linear;
+	-webkit-animation-fill-mode:forwards;
+}
+.anim_stop {
+	-webkit-animation:largen_back 200ms 1 linear;
+	-webkit-animation-fill-mode:forwards;
+}
+@-webkit-keyframes largen {
+	from {
+	-webkit-transform:scale(1,1);
+}
+to {
+	-webkit-transform:scale(1.15,1.15);
+}
+}@-webkit-keyframes largen_back {
+	from {
+	-webkit-transform:scale(1.15,1.15);
+}
+to {
+	-webkit-transform:scale(1.0,1.0);
+}
+}
+</style>
+<script>
+/*
+作者：liws@neunb.com
+时间：2016-09-05
+描述：实现一个鼠标悬浮图片跟着不停的动功能
+*/
+//声明函数
+function imgmove (box,img) {
+//鼠标在指定元素内移动触发该事件
+$(box).mousemove(function (e) {
+//初始化event对象
+e=e||window.event;
+//添加一个类样式 就是一段css3动画
+$(this).addClass("anim");
+//删除另一个类样式 反向动画
+$(this).removeClass("anim_stop");
+//获取鼠标相对于当前元素的坐标
+//思路：先获取元素的边框，再获取元素边框到页面边缘的距离，最后获取鼠标当前相对于页面的坐标位置
+var borderTwidth=parseFloat($(box).css("border-top-width")),
+borderLwidth=parseFloat($(box).css("border-left-width")),
+Rect=this.getBoundingClientRect(),//这一行的意思是给当前元素变成一个同等大小的矩形 返回上下左右距离页面距离的四个值
+//元素距离页面上部距离
+twidth=Rect.top,
+//左部距离
+lwidth=Rect.left,
+//鼠标当前位置减去元素到页面边缘位置再减去边框宽度就是鼠标在元素内的坐标
+ofsttop=e.clientX-lwidth-borderLwidth,
+ofstleft=e.clientY-twidth-borderTwidth;
+$("p").html(ofstleft+","+ofsttop);
+//实时改变图片的绝对定位坐标实现不停滑动效果
+$(img).css("left",ofstleft*-0.05+"px");
+$(img).css("top",ofsttop*-0.05+"px");
+})
+$(box).mouseout(function () {
+$(this).removeClass("anim");
+$(this).addClass("anim_stop");
+})
+}
+//调用函数
+imgmove($("#a"),$("#b"));
+</script>
+</head>
+
+<body>
+<div id="a">
+	<div id="b">
+	</div>
+</div>
+<p id="d"></p>
+</body>
+</html>

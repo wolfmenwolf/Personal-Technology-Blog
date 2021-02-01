@@ -1,0 +1,353 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>文字鼠标经过效果</title>
+<script id="jqbb" src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<style type="text/css">
+@charset "utf-8";
+body { background-color: #fff }
+
+	.one {
+	background:#f19f0f;
+	padding:50px 0px;
+	width:100%;
+	margin:0 auto;
+	text-align:center;
+}
+.one .tags {
+	display:inline-block;
+	position:relative;
+	font-size:20px;
+	color:#fff;
+	margin:40px 20px;
+	width:120px;
+	height:40px
+}
+.one .tags .line {
+	opacity:0;
+	position:absolute;
+	bottom:0;
+	left:0;
+	width:100%;
+	height:4px;
+	background:#fff;
+	transition:all 0.5s  linear;
+}
+.tags:hover .line {
+	opacity:1;
+	bottom:8px
+}
+.two {
+	background:#3fa46a;
+	padding:50px 0px;
+	width:100%;
+	margin:0 auto;
+	text-align:center;
+}
+.two .a {
+	display:inline-block;
+	position:relative;
+	font-size:20px;
+	color:#fff;
+	margin:40px 20px;
+	width:120px;
+	height:40px
+}
+.two .a .line {
+	opacity:0;
+	position:absolute;
+	top:30px;
+	left:0;
+	width:100%;
+	height:4px;
+	background:#fff;
+	transition:all 0.5s  linear;
+}
+.a:hover .line {
+	opacity:1;
+	top:40px
+}
+.three {
+	background:#fff;
+	padding:50px 0px;
+	width:100%;
+	margin:0 auto;
+	text-align:center;
+}
+.three .b {
+	display:inline-block;
+	position:relative;
+	font-size:20px;
+	color:#566473;
+	margin:40px 20px;
+	width:120px;
+	height:40px
+}
+.three .b .top {
+	opacity:0;
+	position:absolute;
+	top:30px;
+	left:0;
+	width:100%;
+	height:4px;
+	background:#566473;
+	transition:all 0.5s  linear;
+}
+.three .b .bottom {
+	position:absolute;
+	bottom:0;
+	left:0px;
+	height:4px;
+	width:120px;
+	transform:scale(0.8);
+	background:#566473;
+	transition:all 0.5s  linear;
+}
+.b:hover .top {
+	opacity:1;
+	top:-20px;
+}
+.b:hover .bottom {
+	transform:scale(1)
+}
+.four {
+	background:#566473;
+	padding:50px 0px;
+	width:100%;
+	margin:0 auto;
+	text-align:center;
+}
+.four .c {
+	display:inline-block;
+	position:relative;
+	font-size:20px;
+	color:#fff;
+	margin:40px 20px;
+	width:120px;
+	height:40px
+}
+.four .c .left {
+	position:absolute;
+	top:-10px;
+	left:-5px;
+	width:100%;
+	height:100%;
+	border:4px solid #354856;
+}
+.four .c .right {
+	opacity:0;
+	position:absolute;
+	top:-30px;
+	left:15px;
+	width:100%;
+	height:100%;
+	border:4px solid #fff;
+	transition:all 0.5s  linear;
+}
+.c:hover .right {
+	opacity:1;
+	top:-10px;
+	left:-5px;
+}
+.five {
+	background:#9e487f;
+	padding:50px 0px;
+	width:100%;
+	margin:0 auto;
+	text-align:center;
+}
+.five .d {
+	display:inline-block;
+	position:relative;
+	font-size:20px;
+	color:#fff;
+	margin:40px 20px;
+	width:120px;
+	height:40px
+}
+.five .d .up {
+	position:absolute;
+	top:-20px;
+	left:0;
+	height:1px;
+	width:100%;
+	background:#fff;
+	transition:all 0.5s  linear
+}
+.five .d .down {
+	opacity:0;
+	padding-bottom:20px;
+	text-align:center;
+	color:black;
+	font-size:12px;
+	position:absolute;
+	top:10px;
+	left:0;
+	width:100%;
+	border-bottom:1px solid #fff;
+	transition:all 0.5s  linear
+}
+.five .d:hover .up {
+	height:6px;
+}
+.five .d:hover .down {
+	opacity:1;
+	top:40px;
+}
+</style>
+</head>
+<body>
+<div class="one">
+<div class="tags">
+PALIMPSEST
+<div class="line"></div>
+</div>
+<div class="tags">
+PALIMPSEST
+<div class="line"></div>
+</div>
+<div class="tags">
+PALIMPSEST
+<div class="line"></div>
+</div>
+<div class="tags">
+PALIMPSEST
+<div class="line"></div>
+</div>
+<div class="tags">
+PALIMPSEST
+<div class="line"></div>
+</div>
+<div class="tags">
+PALIMPSEST
+<div class="line"></div>
+</div>
+</div>
+<div class="two">
+<div class="tags a">
+PALIMPSEST
+<div class="line"></div>
+</div>
+<div class="tags a">
+PALIMPSEST
+<div class="line"></div>
+</div>
+<div class="tags a">
+PALIMPSEST
+<div class="line"></div>
+</div>
+<div class="tags a">
+PALIMPSEST
+<div class="line"></div>
+</div>
+<div class="tags a">
+PALIMPSEST
+<div class="line"></div>
+</div>
+<div class="tags a">
+PALIMPSEST
+<div class="line"></div>
+</div>
+</div>
+<div class="three">
+<div class="tags b">
+PALIMPSEST
+<div class="top"></div>
+<div class="bottom"></div>
+</div>
+<div class="tags b">
+PALIMPSEST
+<div class="top"></div>
+<div class="bottom"></div>
+</div>
+<div class="tags b">
+PALIMPSEST
+<div class="top"></div>
+<div class="bottom"></div>
+</div>
+<div class="tags b">
+PALIMPSEST
+<div class="top"></div>
+<div class="bottom"></div>
+</div>
+<div class="tags b">
+PALIMPSEST
+<div class="top"></div>
+<div class="bottom"></div>
+</div>
+<div class="tags b">
+PALIMPSEST
+<div class="top"></div>
+<div class="bottom"></div>
+</div>
+</div>
+<div class="four">
+<div class="tags c">
+PALIMPSEST
+<div class="left"></div>
+<div class="right"></div>
+</div>
+<div class="tags c">
+PALIMPSEST
+<div class="left"></div>
+<div class="right"></div>
+</div>
+<div class="tags c">
+PALIMPSEST
+<div class="left"></div>
+<div class="right"></div>
+</div>
+<div class="tags c">
+PALIMPSEST
+<div class="left"></div>
+<div class="right"></div>
+</div>
+<div class="tags c">
+PALIMPSEST
+<div class="left"></div>
+<div class="right"></div>
+</div>
+<div class="tags c">
+PALIMPSEST
+<div class="left"></div>
+<div class="right"></div>
+</div>
+</div>
+<div class="five">
+<div class="tags d">
+PALIMPSEST
+<div class="up"></div>
+<div class="down">Assemblage love</div>
+</div>
+<div class="tags d">
+PALIMPSEST
+<div class="up"></div>
+<div class="down">Assemblage love</div>
+</div>
+<div class="tags d">
+PALIMPSEST
+<div class="up"></div>
+<div class="down">Assemblage love</div>
+</div>
+<div class="tags d">
+PALIMPSEST
+<div class="up"></div>
+<div class="down">Assemblage love</div>
+</div>
+<div class="tags d">
+PALIMPSEST
+<div class="up"></div>
+<div class="down">Assemblage love</div>
+</div>
+<div class="tags d">
+PALIMPSEST
+<div class="up"></div>
+<div class="down">Assemblage love</div>
+</div>
+</div>
+<script>
+
+</script>
+</body>
+</html>

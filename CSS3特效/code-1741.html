@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>css3按钮动态光影滑过效果 - 素材牛（www.sucainiu.com）</title>
+<script id="jqbb" src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<style type="text/css">
+body { background-color: #fff }
+.buttonSublit {
+	width:355px;
+	height:55px;
+	overflow:hidden;
+	margin-top:10px;
+}
+.buttonSublit .subBtn {
+	width:100%;
+	height:100%;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	color:#fff;
+	font-size:16px;
+	cursor:pointer;
+	background:#ff4131;
+	background:-webkit-linear-gradient(to right,#ff6131,#ff4131);
+	background:linear-gradient(to right,#ff6131,#ff4131);
+}
+button {
+	border:1px solid transparent;
+	outline:none;
+}
+button:active,button:hover {
+	background:#ec2e1d;
+}
+/* 交互class style */
+.btnAnimation {
+	position:relative;
+	transition:all 0.5s;
+}
+.btnAnimation::after {
+	position:absolute;
+	content:"";
+	display:block;
+	width:200px;
+	height:40px;
+	bottom:-100%;
+	left:-100%;
+	transition:all 0.2s;
+	background:rgba(255,255,255,0.3);
+	transform:rotate(60deg);
+	-o-animation:btnMove 1.5s infinite;
+	-webkit-animation:btnMove 1.5s infinite;
+	-moz-animation:btnMove 1.5s infinite;
+	animation-delay:1s;
+	-webkit-animation-delay:1s;
+}
+.btnAnimation::before {
+	position:absolute;
+	content:"";
+	display:block;
+	width:200px;
+	height:40px;
+	top:-100%;
+	right:-100%;
+	transition:all 0.2s;
+	background:rgba(255,255,255,0.3);
+	transform:rotate(60deg);
+	-o-animation:btnMove-1 1.5s infinite;
+	-webkit-animation:btnMove-1 1.5s infinite;
+	-moz-animation:btnMove-1 1.5s infinite;
+	animation-delay:1s;
+	-webkit-animation-delay:1s;
+}
+@keyframes btnMove {
+	0% {
+	bottom:-100%;
+	left:-100%;
+	transition:all 0.2s;
+}
+100% {
+	left:110%;
+	bottom:110%;
+	transition:all 0.2s;
+}
+}@keyframes btnMove-1 {
+	0% {
+	top:-100%;
+	right:-100%;
+	transition:all 0.2s;
+}
+100% {
+	right:110%;
+	top:110%;
+	transition:all 0.2s;
+}
+}
+</style>
+</head>
+<body>
+<div class="buttonSublit btnAnimation">
+<button class="subBtn">立即提交，并获取报价</button>
+</div>
+<script>
+
+</script>
+</body>
+</html>

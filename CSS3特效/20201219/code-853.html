@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>饿了么添加菜品小球动画 - 素材牛（www.sucainiu.com）</title>
+<script id="jqbb" src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<style type="text/css">
+body { background-color: #fff }
+* {
+	margin:0;
+	padding:0;
+}
+button {
+	margin:50px;
+	margin-left:500px;
+	margin-top:200px;
+}
+#ball {
+	display:none;
+	position:fixed;
+	left:300px;
+	top:300px;
+	transition:all .5s cubic-bezier(0.49,-0.5,0.75,0.41);
+}
+#ball #ball-hook {
+	width:15px;
+	height:15px;
+	background:red;
+	border-radius:100%;
+	transition:all .5s linear;
+}
+</style>
+</head>
+
+<body>
+<button id="btn">小球</button>
+<div id="ball">
+    <div id="ball-hook"></div>
+</div>
+
+<script>
+window.onload = function() {
+    var btn = document.getElementById('btn');
+    var oB = document.getElementById('ball');
+    var oBB = document.getElementById('ball-hook');
+
+    btn.onclick = function() {
+        var e = this.getBoundingClientRect();
+        var x = e.left;
+        var y = e.top;
+
+        var downy = window.innerHeight - y;
+        var downx = -(x - 50);
+
+        oB.style.top = y - 20 + 'px';
+        oB.style.left = x + 'px';
+
+        oB.style.display = "block";
+        setTimeout(function() {
+            oB.style.webkitTransform = 'translate3d(0,' + downy + 'px,0)';
+            oB.style.transform = 'translate3d(0,' + downy + 'px,0)';
+            oB.style.transition = 'all .5s cubic-bezier(0.49, -0.5, 0.75, 0.41)';
+
+            oBB.style.webkitTransform = 'translate3d(' + downx + 'px,0,0)';
+            oBB.style.transform = 'translate3d(' + downx + 'px,0,0)';
+            oBB.style.transition = 'all .5s linear';
+        })
+    }
+
+    oB.addEventListener('transitionend', function(ev) {
+        oB.style.display = "none";
+        oB.style.webkitTransform = 'translate3d(0,0,0)';
+        oB.style.transform = 'translate3d(0,0,0)';
+        oB.style.transition = 'none';
+
+        oBB.style.webkitTransform = 'translate3d(0,0,0)';
+        oBB.style.transform = 'translate3d(0,0,0)';
+        oBB.style.transition = 'none';
+    })
+
+}
+</script>
+</body>
+</html>

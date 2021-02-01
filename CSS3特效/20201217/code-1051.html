@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>CSS3气泡loading动画效果 - 素材牛（www.sucainiu.com）</title>
+<script id="jqbb" src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<style type="text/css">
+body { background-color: #fff }
+* {
+	margin:0;
+	padding:0;
+}
+.loading {
+	width:60px;
+	height:60px;
+	position:absolute;
+	left:50%;
+	top:50%;
+	margin-left:-25px;
+}
+.circleBox {
+	width:40px;
+	height:40px;
+	margin:-20px 0px 0px -20px;
+	top:50%;
+	left:50%;
+	position:absolute;
+}
+.circleBox p {
+	width:12px;
+	height:12px;
+	border-radius:50%;
+	position:absolute;
+	animation:move 1.5s infinite linear;
+	background:radial-gradient(transparent 10%,rgba(16,47,91,.2) 100%);
+}
+.circleBox p:after {
+	content:"";
+	position:absolute;
+	width:12px;
+	height:12px;
+	border-radius:50%;
+	-webkit-backface-visibility:hidden;
+	backface-visibility:hidden;
+	background-color:rgba(126,169,232,.4);
+}
+.circleBox p:nth-of-type(1) {
+	left:0;
+	top:0;
+}
+.circleBox p:nth-of-type(2) {
+	right:0;
+	top:0;
+}
+.circleBox p:nth-of-type(3) {
+	right:0;
+	bottom:0;
+}
+.circleBox p:nth-of-type(4) {
+	left:0;
+	bottom:0;
+}
+.circleBox:nth-of-type(2) {
+	transform:rotate(45deg);
+}
+.circleBox:nth-of-type(1) p:nth-of-type(1) {
+	animation-delay:-0.1s
+}
+.circleBox:nth-of-type(1) p:nth-of-type(2) {
+	animation-delay:-0.5s
+}
+.circleBox:nth-of-type(1) p:nth-of-type(3) {
+	animation-delay:-0.9s
+}
+.circleBox:nth-of-type(1) p:nth-of-type(4) {
+	animation-delay:-0.13s
+}
+.circleBox:nth-of-type(2) p:nth-of-type(1) {
+	animation-delay:-0.7s
+}
+.circleBox:nth-of-type(2) p:nth-of-type(2) {
+	animation-delay:-0.11s
+}
+.circleBox:nth-of-type(2) p:nth-of-type(3) {
+	animation-delay:-0.15s
+}
+.circleBox:nth-of-type(2) p:nth-of-type(4) {
+	animation-delay:-0.3s
+}
+@keyframes move {
+	0% {
+	transform:scale(0);
+}
+50% {
+	transform:scale(1.5);
+}
+100% {
+	transform:scale(0);
+}
+}
+</style>
+</head>
+<body>
+<div class="loading">
+<div class="circleBox">
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+</div>
+<div class="circleBox">
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+</div>
+</div>
+<script>
+
+</script>
+<script type="text/javascript"  src="//idm-su.baidu.com/su.js"></script>
+</body>
+</html>

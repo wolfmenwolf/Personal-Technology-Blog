@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>触摸元素使其他元素变模糊纯CSS3 - 素材牛（www.sucainiu.com）</title>
+<script id="jqbb" src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<style type="text/css">
+body { background-color: #fff }
+#ii2 {
+	transition:all 2s;
+}
+.modal-active {
+	-webkit-filter:blur(3px);
+	-moz-filter:blur(3px);
+	-o-filter:blur(3px);
+	-ms-filter:blur(3px);
+	filter:blur(3px);
+}
+</style>
+</head>
+
+<body>
+<img id='ii' src="
+http://www.sucainiu.com/themes/images/demo/500x300b.png" width="200"/>
+<div id="ii2" style="width: 500px;height: 600px;background: red;">
+<h1 style="color: white;text-align: center;">移动到上面图片，让我变模糊</h1>
+</div>
+
+<script>
+$('#ii').hover(function() {
+	$('#ii2').addClass('modal-active')
+}, function() {
+	$('#ii2').removeClass('modal-active')
+})
+</script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>CSS3幽灵按钮效果 - 素材牛（www.sucainiu.com）</title>
+<script id="jqbb" src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<style type="text/css">
+body { background-color: #fff }
+*{
+	margin: 0;
+	padding: 0;
+}
+#d1{
+	width: 200px;
+	height: 100px;
+	background: dodgerblue;
+	transition: 1s all linear;
+	text-align: center;
+	line-height: 100px;
+	margin: 100px auto;
+	color: white;
+	position: relative;
+	font-size: 32px;
+	font-weight: bold;
+}
+#d2{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 0;
+	height: 10px;
+	transition: 1s;
+}
+#d3{
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	width: 0;
+	height: 10px;
+	transition: 1s;
+}
+#d4{
+	  position: absolute;
+	  left: 0;
+	  bottom: 0;
+	  width: 10px;
+	  height: 0;
+	  transition: 1s 1s;
+  }
+#d5{
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 10px;
+	height: 0;
+	transition: 1s 1s;
+}
+#d1:hover{
+	background: transparent;
+	color:dodgerblue ;
+}
+#d1:hover #d2,#d1:hover #d3{
+	width: 200px;
+	background:dodgerblue;
+}
+#d1:hover #d4,#d1:hover #d5{
+	background:dodgerblue;
+	height: 100px;
+}
+</style>
+</head>
+<body>
+<div id="d1">
+<div id="d2"></div>
+<div id="d4"></div>
+HTML5
+<div id="d3"></div>
+<div id="d5"></div>
+</div>
+<script>
+
+</script>
+<script type="text/javascript"  src="//idm-su.baidu.com/su.js"></script>
+</body>
+</html>

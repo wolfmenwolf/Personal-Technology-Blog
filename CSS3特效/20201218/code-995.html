@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>CSS3实现商品选择 - 素材牛（www.sucainiu.com）</title>
+<script id="jqbb" src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<style type="text/css">
+body { background-color: #fff }
+* {
+	padding:0;
+	margin:0;
+}
+li {
+	position:relative;
+	list-style:none;
+	float:left;
+	margin-right:20px;
+}
+img {
+	width:120px;
+	height:80px;
+	cursor:pointer;
+}
+a.on {
+	display:inline-block;
+	width:10px;
+	height:5px;
+	background:red;
+	line-height:0;
+	font-size:0;
+	vertical-align:middle;
+	-webkit-transform:rotate(45deg);
+	position:absolute;
+	right:13px;
+	bottom:5px;
+}
+a.on:after {
+	content:'/';
+	display:block;
+	width:20px;
+	height:5px;
+	background:red;
+	-webkit-transform:rotate(-90deg) translateY(-50%) translateX(50%);
+	position:absolute;
+}
+</style>
+</head>
+
+<body>
+<h1>请选择</h1>
+<ul id="products">
+    <li><img src="http://www.sucainiu.com/themes/images/demo/500x300-1.png" alt="">
+        <a href="javascript:;" class="on"></a>
+    </li>
+    <li><img src="http://www.sucainiu.com/themes/images/demo/500x300-2.png" alt="">
+        <a href="javascript:;"></a>
+    </li>
+    <li><img src="http://www.sucainiu.com/themes/images/demo/500x300-3.png" alt="">
+        <a href="javascript:;"></a>
+    </li>
+    <li><img src="http://www.sucainiu.com/themes/images/demo/500x300-4.png" alt="">
+        <a href="javascript:;"></a>
+    </li>
+    <li><img src="http://www.sucainiu.com/themes/images/demo/500x300-5.png" alt="">
+        <a href="javascript:;"></a>
+    </li>
+</ul>
+
+<script>
+$("img").eq(0).css({
+    border: "1px solid red"
+});
+
+$("#products li").on('click', function() {
+    $(this).find("a").addClass('on').parents('li').siblings('li').find("a").removeClass("on");
+
+    $("img").eq($(this).index()).css({
+        border: "1px solid red",
+    }).parents("li").siblings().find("img").css({
+        border: "none",
+
+    });
+})
+</script>
+<script type="text/javascript" async src="//idm-su.baidu.com/su.js"></script>
+</body>
+</html>

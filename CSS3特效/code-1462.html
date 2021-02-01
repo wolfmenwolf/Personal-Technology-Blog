@@ -1,0 +1,175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>CSS定位图形效果</title>
+<script id="jqbb" src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<style type="text/css">
+body { background-color: #fff }
+ .box {
+	border:1px solid #ddd;
+	width:50%;
+	margin:0 auto;
+}
+.box_graph {
+	width:0;
+	height:0;
+	border:12rem solid transparent;
+	border-radius:50%;
+	cursor:pointer;
+	position:relative;
+	position:absolute;
+}
+.box_graph p {
+	color:#fff;
+	position:relative;
+	width:5.5rem;
+	word-break:break-all;
+	font-size:30px;
+}
+.box_graph.st {
+	border-left-color:#8064A2;
+	transform:rotate(45deg);
+}
+.box_graph.st p {
+	transform:rotate(-45deg);
+	left:-8rem;
+	top:-4.5rem;
+	/* left:-4rem;
+	top:-2.5rem;
+	*/
+}
+.box_graph.nd {
+	border-left-color:#5F5BAE;
+	transform:rotate(135deg);
+	left:1rem;
+}
+.box_graph.nd p {
+	transform:rotate(-135deg);
+	/* left:-4.25rem;
+	top:-2.5rem;
+	*/
+      left:-9rem;
+	top:-5.25rem;
+}
+.box_graph.rd {
+	border-left-color:#4BACC6;
+	transform:rotate(-45deg);
+	top:1rem;
+}
+.box_graph.rd p {
+	transform:rotate(45deg);
+	left:-8rem;
+	top:-4rem;
+}
+.box_graph.fin {
+	border-left-color:#4691CC;
+	transform:rotate(-135deg);
+	left:1rem;
+	top:1rem;
+}
+.box_graph.fin p {
+	transform:rotate(135deg);
+	/* left:-4.25rem;
+	top:-2rem;
+	*/
+      left:-9.25rem;
+	top:-3.5rem;
+}
+.box_child {
+	position:relative;
+}
+.box_desc {
+	position:absolute;
+	width:12rem;
+	border-radius:15px;
+	font-size:13px;
+	height:10rem;
+	padding:0rem 1rem 1rem 1rem;
+	z-index:-1;
+}
+.box_dec.st .box_desc {
+	border:3px solid #8064A2;
+	left:-12.5rem;
+	padding-right:6rem;
+}
+.box_dec.nd .box_desc {
+	border:3px solid #5F5BAE;
+	left:21.5rem;
+	padding-left:3rem;
+	width:15rem;
+}
+.box_dec.rd .box_desc {
+	border:3px solid #4BACC6;
+	left:-12.5rem;
+	top:16rem;
+	padding-right:6rem;
+	width:12rem;
+}
+.box_dec.fin .box_desc {
+	border:3px solid #4691CC;
+	left:21.5rem;
+	top:16rem;
+	padding-left:3rem;
+	width:15rem;
+}
+</style>
+</head>
+<body>
+<div class="box">
+<div class="half_t">
+<div class="box_child">
+<div class="box_dec st">
+<div class="box_graph st">
+<p>技术可靠</p>
+</div>
+<div class="box_desc">
+<p>jQuery是一个快速、简洁的JavaScript框架</p>
+<p>是继Prototype之后又一个优秀的JavaScript代码库</p>
+</div>
+</div>
+</div>
+<div class="box_child">
+<div class="box_dec nd">
+<div class="box_graph nd">
+<p>精准匹配</p>
+</div>
+<div class="box_desc">
+<p>jQuery的核心特性可以总结为</p>
+<p>具有独特的链式语法和短小清晰的多功能接口；具有高效灵活的css选择器</p>
+<p>并且可对CSS选择器进行扩展</p>
+</div>
+</div>
+</div>
+</div>
+<div class="half_b">
+<div class="box_child">
+<div class="box_dec rd">
+<div class="box_graph rd">
+<p>数据透明</p>
+</div>
+<div class="box_desc">
+<p>jQuery选择符引擎执行速度的显著提升</p>
+<p>从这个版本开始，jQuery的性能达到了Prototype、Mootools以及Dojo等同类JavaScript库的水平</p>
+</div>
+</div>
+</div>
+<div class="box_child">
+<div class="box_dec fin">
+<div class="box_graph fin">
+<p>服务贴心</p>
+</div>
+<div class="box_desc">
+<p>它使用了全新的选择符引擎Sizzle</p>
+<p>在各个浏览器下全面超越其他同类型JavaScript框架的查询速度</p>
+<p>使用live()方法可以为当前及将来增加的元素绑定事件</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+
+</script>
+</body>
+</html>

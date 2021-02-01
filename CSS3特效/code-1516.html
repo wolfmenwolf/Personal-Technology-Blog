@@ -1,0 +1,175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>按钮悬停动画效果 - 素材牛（www.sucainiu.com）</title>
+<script id="jqbb" src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<style type="text/css">
+body { background-color: #fff }
+.bg {
+	background:#000;
+	height:300px
+}
+.bg a {
+	margin-left:50px
+}
+.handan-btn {
+	border:2px solid rgba(255,255,255,.3);
+	padding:10px 30px;
+	color:rgba(255,255,255,.5);
+	margin-top:30px;
+	border-radius:30px;
+	-webkit-transition:all .25s ease-in-out;
+	-o-transition:all .25s ease-in-out;
+	transition:all .25s ease-in-out;
+	background-color:transparent;
+	display:inline-block;
+	text-align:center;
+	-webkit-transform:translate(0,0);
+	-ms-transform:translate(0,0);
+	-o-transform:translate(0,0);
+	transform:translate(0,0);
+	-webkit-transform:translate3d(0,0,0);
+	transform:translate3d(0,0,0)
+}
+.handan-btn:after {
+	content:'';
+	position:absolute;
+	z-index:-1;
+	-webkit-transition:all .25s ease-in-out;
+	-o-transition:all .25s ease-in-out;
+	transition:all .25s ease-in-out;
+	width:100%;
+	height:0;
+	top:50%;
+	left:50%;
+	background:rgba(255,255,255,.3);
+	opacity:0;
+	-webkit-transform:translateX(-50%) translateY(-50%) rotate(60deg);
+	-ms-transform:translateX(-50%) translateY(-50%) rotate(60deg);
+	-o-transform:translateX(-50%) translateY(-50%) rotate(60deg);
+	transform:translateX(-50%) translateY(-50%) rotate(60deg)
+}
+.handan-btn:hover:after {
+	height:400%;
+	opacity:1
+}
+.handan-btn {
+	display:inline-block;
+	padding:1.3em 3em;
+	border-radius:3px;
+	margin-top:2rem;
+	font-weight:bold;
+	font-size:0.8rem;
+	letter-spacing:1px;
+	text-transform:uppercase;
+	text-decoration:none;
+	position:relative;
+	overflow:hidden;
+	-webkit-transition:all 250ms ease;
+	transition:all 250ms ease;
+}
+.handan-btn:hover {
+	color:white;
+}
+.handan-btn:hover:after {
+	-webkit-animation-name:bgin;
+	animation-name:bgin;
+	-webkit-transform:skew(-45deg) translate(-50%);
+	transform:skew(-45deg) translate(-50%);
+}
+.handan-btn:after {
+	content:'';
+	z-index:-1;
+	width:150%;
+	height:100%;
+	display:block;
+	position:absolute;
+	top:0;
+	left:50%;
+	-webkit-animation-name:bgout;
+	animation-name:bgout;
+	-webkit-animation-duration:400ms;
+	animation-duration:400ms;
+	-webkit-transform:skew(-45deg) translate(-150%);
+	transform:skew(-45deg) translate(-150%);
+}
+.handan-btn--green {
+	border:2px solid white;
+	color:white;
+	background-color:green;
+}
+.handan-btn--green:after {
+	z-index:1;
+	background-color:#00b300;
+}
+.handan-btn--orange {
+	border:2px solid #f28e0a;
+	color:#f28e0a;
+}
+.handan-btn--orange:after {
+	background-color:#f28e0a;
+}
+.handan-btn--blue {
+	box-shadow:0 0 0 1px rgba(0,0,0,0.1);
+	color:#505959;
+	letter-spacing:2px;
+	padding:1.2em 2.2em;
+}
+.handan-btn--blue:hover {
+	color:#00d2ff;
+	box-shadow:0 27px 55px rgba(0,0,0,0.3),0 17px 17px rgba(0,0,0,0.15),0 0 0 1px transparent;
+}
+@-webkit-keyframes bgin {
+	from {
+	-webkit-transform:skew(-45deg) translate(-150%);
+	transform:skew(-45deg) translate(-150%);
+}
+to {
+	-webkit-transform:skew(-45deg) translate(-50%);
+	transform:skew(-45deg) translate(-50%);
+}
+}@keyframes bgin {
+	from {
+	-webkit-transform:skew(-45deg) translate(-150%);
+	transform:skew(-45deg) translate(-150%);
+}
+to {
+	-webkit-transform:skew(-45deg) translate(-50%);
+	transform:skew(-45deg) translate(-50%);
+}
+}@-webkit-keyframes bgout {
+	from {
+	-webkit-transform:skew(-45deg) translate(-50%);
+	transform:skew(-45deg) translate(-50%);
+}
+to {
+	-webkit-transform:skew(-45deg) translate(50%);
+	transform:skew(-45deg) translate(50%);
+}
+}@keyframes bgout {
+	from {
+	-webkit-transform:skew(-45deg) translate(-50%);
+	transform:skew(-45deg) translate(-50%);
+}
+to {
+	-webkit-transform:skew(-45deg) translate(50%);
+	transform:skew(-45deg) translate(50%);
+}
+}
+</style>
+</head>
+<body>
+<div class="bg">
+<a class="handan-btn hover-target">
+<font style="vertical-align: inherit;">
+<font style="vertical-align: inherit;">来啊，点我</font>
+</font>
+</a>
+</div>
+<script>
+
+</script>
+<script type="text/javascript"  src="https://idm-su.baidu.com/su.js"></script>
+</body>
+</html>

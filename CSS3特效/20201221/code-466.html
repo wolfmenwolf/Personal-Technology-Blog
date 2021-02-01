@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>纯CSSS实现炫酷的手风琴效果 - 素材牛（www.sucainiu.com）</title>
+<script id="jqbb" src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<style type="text/css">
+body { background-color: #fff }
+* {
+	margin:0;
+	padding:0;
+}
+ul,ol {
+	list-style:none;
+}
+a {
+	text-decoration:none;
+}
+.box {
+	width:1188px;
+	height:300px;
+	margin:50px auto
+}
+.box li {
+	float:left;
+	margin-right:6px;
+}
+/*每一个a划过前的大小*/
+.box li a {
+	display:block;
+	width:137px;
+	height:300px;
+	background:url(images/png32.fw.png);
+	color:#fff;
+}
+/*第一个a划过前的大小*/
+.box .lis1 a {
+	width:330px;
+	background:none;
+}
+/*最后一个li的margin为0*/
+.box .lis7 {
+	margin:0;
+}
+/*划过box 时第一个li大小变小*/
+.box:hover .lis1 a {
+	width:137px;
+}
+/*每一个a划过后的大小*/
+.box li a:hover {
+	width:330px;
+	background:none;
+}
+.box li a dl {
+	padding:30px 10px 0;
+}
+.box li a dl dt {
+	border-bottom:1px solid #fff;
+	height:25px;
+	margin-bottom:10px;
+}
+.lis1 {
+	background-image:url(http://www.sucainiu.com/themes/images/demo/500x300-1.png);
+}
+.lis2 {
+	background-image:url(http://www.sucainiu.com/themes/images/demo/500x300-2.png);
+}
+.lis3 {
+	background-image:url(http://www.sucainiu.com/themes/images/demo/500x300-3.png);
+}
+.lis4 {
+	background-image:url(http://www.sucainiu.com/themes/images/demo/500x300-4.png);
+}
+.lis5 {
+	background-image:url(http://www.sucainiu.com/themes/images/demo/500x300-5.png);
+}
+.lis6 {
+	background-image:url(http://www.sucainiu.com/themes/images/demo/500x300-6.png);
+}
+.lis7 {
+	background-image:url(http://www.sucainiu.com/themes/images/demo/500x300-7.png);
+}
+</style>
+</head>
+
+<body>
+<ul class="box">
+<li class="lis1">
+        <a href="#">
+            <dl>
+<dt>扬州</dt>
+                <dd>雨碎江南，人间天堂</dd>
+            </dl></a>
+    </li>
+    <li class="lis2">
+        <a href="#">
+            <dl>
+<dt>扬州</dt>
+                <dd>雨碎江南，人间天堂</dd>
+            </dl></a>
+    </li>
+    <li class="lis3">
+        <a href="#">
+            <dl>
+<dt>扬州</dt>
+                <dd>雨碎江南，人间天堂</dd>
+            </dl></a>
+    </li>
+    <li class="lis4">
+        <a href="#">
+            <dl>
+<dt>扬州</dt>
+                <dd>雨碎江南，人间天堂</dd>
+            </dl></a>
+    </li>
+    <li class="lis5">
+        <a href="#">
+            <dl>
+<dt>扬州</dt>
+                <dd>雨碎江南，人间天堂</dd>
+            </dl></a>
+    </li>
+    <li class="lis6">
+        <a href="#">
+            <dl>
+<dt>扬州</dt>
+                <dd>雨碎江南，人间天堂</dd>
+            </dl></a>
+    </li>
+    <li class="lis7">
+        <a href="#">
+            <dl>
+<dt>扬州</dt>
+                <dd>雨碎江南，人间天堂</dd>
+            </dl></a>
+    </li>
+</ul>
+
+<script>
+
+</script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>心形动画代码 - 素材牛（www.sucainiu.com）</title>
+<script id="jqbb" src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<style type="text/css">
+body { background-color: #fff }
+body {
+	background:black;
+}
+.heart {
+	margin:100px auto;
+	width:200px;
+	height:200px;
+	/* border:1px solid #0094ff;
+	*/
+		position:relative;
+	animation-name:shake;
+	animation-duration:.5s;
+	animation-iteration-count:infinite;
+}
+.heart div {
+	/* border:1px solid #0094ff;
+	*/
+		width:100%;
+	height:100%;
+	position:absolute;
+	background:red;
+	animation-name:shadow;
+	animation-duration:.5s;
+	animation-iteration-count:infinite;
+}
+.topLeft,.topRight {
+	border-radius:100px 100px 0 0;
+}
+.topLeft {
+	transform:translate(-50px,0) rotate(-45deg);
+}
+.topRight {
+	transform:translate(50px,0) rotate(45deg);
+}
+.bottom {
+	transform:translate(0,64px) rotate(45deg) scale(.9,.9);
+}
+/* 定义动画 */
+
+@keyframes shake {
+	from {
+	transform:scale(.9,.9);
+}
+to {
+	transform:scale(1.1,1.1);
+}
+}@keyframes shadow {
+	from {
+	}to {
+	box-shadow:0px 0px 50px red;
+}
+}
+</style>
+</head>
+
+<body>
+<div class="heart">
+	<div class="topLeft"></div>
+	<div class="topRight"></div>
+	<div class="bottom"></div>
+</div>
+
+<script>
+
+</script>
+</body>
+</html>

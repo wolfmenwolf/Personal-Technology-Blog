@@ -1,0 +1,179 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jQuery鼠标经过内容变暗 - 素材牛（www.sucainiu.com）</title>
+<script id="jqbb" src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+<style type="text/css">
+body { background-color: #fff }
+* {
+	margin:0;
+	padding:0;
+}
+body {
+	margin:0;
+	padding:0;
+	color:#333;
+	font:16px 'Microsoft Yahei',Tahoma,"\5B8B\4F53",Arial,Helvetica,Arial,sans-serif;
+	overflow-x:hidden;
+	background:#b8e1ea;
+}
+a {
+	text-decoration:none;
+}
+.content {
+	width:1000px;
+	margin:0 auto;
+}
+.demo {
+	background:#333;
+	position:relative;
+	width:462px;
+	overflow:hidden;
+	box-shadow:0 0 33px #e4e2e2;
+	-webkit-box-shadow:0 0 33px #e4e2e2;
+	-moz-box-shadow:0 0 33px #e4e2e2;
+	float:left;
+	margin:10px;
+}
+.box {
+	width:412px;
+	background:#fff;
+	padding:25px;
+	overflow:hidden;
+	cursor:default;
+}
+.box:hover {
+	opacity:0.2;
+	-webkit-transition:all 0.5s;
+	-moz-transition:all 0.5s;
+	-o-transition:all 0.5s;
+	transition:all 0.5s;
+}
+.box_l {
+	float:left;
+	margin-right:10px;
+}
+.box_l img {
+	width:100px;
+	height:100px;
+}
+.box_r {
+	float:left;
+}
+.box_r span {
+	padding-bottom:5px;
+	display:block;
+	font-size:16px;
+	font-weight:bold;
+}
+.buttons {
+	position:absolute;
+	z-index:999;
+	opacity:1;
+	top:10px;
+	left:10px;
+	width:200px;
+	top:60px;
+	left:50%;
+	margin-left:-100px;
+}
+.buttons a {
+	height:20px;
+	background:#3689ff;
+	text-align:center;
+	line-height:20px;
+	border:1px solid transparent;
+	border-radius:20px;
+	padding:5px 20px;
+	color:#fff;
+	display:block;
+	float:left;
+	margin:0 5px;
+	display:none;
+}
+</style>
+</head>
+<body>
+<div class="content">
+<div class="demo">
+<div class="box">
+<div class="box_l"><img src="http://www.sucainiu.com/themes/images/demo/500x500-1.png"></div>
+<div class="box_r">
+<span>品牌选址</span>
+<p>4w+项目招商，实时更新任你挑</p>
+<p>项目多维度数据解读，精准选址</p>
+</div>
+</div>
+<div class="buttons">
+<a href="#">找项目</a>
+<a href="#">赢拓展</a>
+</div>
+</div>
+<div class="demo">
+<div class="box">
+<div class="box_l"><img src="http://www.sucainiu.com/themes/images/demo/500x500-1.png"></div>
+<div class="box_r">
+<span>品牌选址</span>
+<p>4w+项目招商，实时更新任你挑</p>
+<p>项目多维度数据解读，精准选址</p>
+</div>
+</div>
+<div class="buttons">
+<a href="#">找项目</a>
+<a href="#">赢拓展</a>
+</div>
+</div>
+<div class="demo">
+<div class="box">
+<div class="box_l"><img src="http://www.sucainiu.com/themes/images/demo/500x500-1.png"></div>
+<div class="box_r">
+<span>品牌选址</span>
+<p>4w+项目招商，实时更新任你挑</p>
+<p>项目多维度数据解读，精准选址</p>
+</div>
+</div>
+<div class="buttons">
+<a href="#">找项目</a>
+<a href="#">赢拓展</a>
+</div>
+</div>
+<div class="demo">
+<div class="box">
+<div class="box_l"><img src="http://www.sucainiu.com/themes/images/demo/500x500-1.png"></div>
+<div class="box_r">
+<span>品牌选址</span>
+<p>4w+项目招商，实时更新任你挑</p>
+<p>项目多维度数据解读，精准选址</p>
+</div>
+</div>
+<div class="buttons">
+<a href="#">找项目</a>
+<a href="#">赢拓展</a>
+</div>
+</div>
+</div>
+<script>
+//鼠标经过版块
+$(function() {
+    $(".demo").mouseenter(function(event) {
+        $(this).find('a').fadeIn(800);
+        $(this).find('.box').css("opacity", "0.2");
+        $(this).siblings().find('.box').css("opacity", "");
+    });
+    $(".demo").mouseleave(function(event) {
+        $(this).find('a').fadeOut();
+        $(this).find('.box').css("opacity", "");
+    })
+    $(".demo a").mouseenter(function(event) {
+        $(this).parent().prev().css("opacity", "0.2");
+    })
+    $(".demo a").mouseleave(function(event) {
+        $(this).parent().prev().css("opacity", "0.2");
+    })
+
+})
+</script>
+<script type="text/javascript"  src="//idm-su.baidu.com/su.js"></script>
+</body>
+</html>

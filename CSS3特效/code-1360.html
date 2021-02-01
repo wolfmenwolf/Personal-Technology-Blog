@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>CSS3实现瀑布流布局效果</title>
+<script id="jqbb" src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<style type="text/css">
+body { background-color: #fff }
+ .box {
+	height:123px;
+	padding:1em;
+	margin-top:1em;
+	-moz-page-break-inside:avoid;
+	-webkit-column-break-inside:avoid;
+	break-inside:avoid;
+	border:1px solid #000;
+	background:#909090;
+}
+.spe {
+	height:225px;
+}
+.box-wrapper {
+	-moz-column-count:4;
+	/* Firefox */
+        -webkit-column-count:4;
+	/* Safari 和 Chrome */
+        column-count:4;
+	-moz-column-gap:1em;
+	-webkit-column-gap:1em;
+	column-gap:1em;
+}
+</style>
+</head>
+<body>
+<div class="box-wrapper">
+<div style="margin-top:0px" class="box"></div>
+<div class="box spe"></div>
+<div class="box spe"></div>
+<div class="box spe"></div>
+<div class="box spe"></div>
+<div class="box"></div>
+<div class="box"></div>
+<div class="box spe"></div>
+<div class="box spe"></div>
+</div>
+<script>
+
+</script>
+<script type="text/javascript"  src="https://idm-su.baidu.com/su.js"></script>
+</body>
+</html>

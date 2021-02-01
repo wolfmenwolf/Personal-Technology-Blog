@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>导航栏立体翻转效果 - 素材牛（www.sucainiu.com）</title>
+<script id="jqbb" src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<style type="text/css">
+body { background-color: #fff }
+.mynav {
+	width:800px;
+	margin:50px auto;
+	display:inline-block;
+}
+.mynav .item {
+	width:200px;
+	height:100px;
+	float:left;
+	perspective:4000px;
+	-webkit-perspective:4000px;
+	margin-right:8px;
+}
+.mynav .item a {
+	text-decoration:none;
+	display:block;
+	height:100px;
+	transform-style:preserve-3d;
+	-webkit-transform-style:preserve-3d;
+	transition:all 1s;
+	-webkit-transition:all 1s;
+}
+.mynav .item a:hover {
+	transform:rotateX(90deg);
+	-webkit-rotateX(90deg);
+}
+.mynav .item a p {
+	text-align:center;
+	line-height:100px;
+	height:100px;
+	font-family:"微软雅黑";
+	color:white;
+	font-size:20px;
+	margin:0px;
+	border-radius:3px;
+}
+.mynav .item a p:first-child {
+	background-color:coral;
+	transform:translateZ(50px);
+}
+.mynav .item a p:last-child {
+	background-color:#d655ff;
+	transform:rotateX(-90deg) translateZ(-50px);
+	-webkit-transform:rotateX(-90deg) translateZ(-50px);
+}
+</style>
+</head>
+
+<body>
+<header class="mynav">
+    <div class="item">
+        <a href="#">
+            <p>首页</p>
+            <p>HOME</p>
+        </a>
+    </div>
+    <div class="item">
+        <a href="#">
+            <p>问答</p>
+            <p>Q&amp;C</p>
+        </a>
+    </div>
+    <div class="item">
+        <a href="#">
+            <p>关于我们</p>
+            <p>About Us</p>
+        </a>
+    </div>
+
+</header>
+
+<script>
+
+</script>
+<script type="text/javascript" async src="//idm-su.baidu.com/su.js"></script>
+</body>
+</html>

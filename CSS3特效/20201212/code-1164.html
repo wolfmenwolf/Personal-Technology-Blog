@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>超简单CSS3跳动动画效果 - 素材牛（www.sucainiu.com）</title>
+<script id="jqbb" src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<style type="text/css">
+body { background-color: #fff }
+    body{
+        background:#ccc;
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .box{
+        height: 50px;
+        width: 50px;
+        position: relative;
+    }
+    .box::before{
+        content: '';
+        height: 8px; width: 50px; background: #000; opacity: .2; border-radius: 50%;
+        position: absolute;
+        top: 67px;
+        left: 0;
+        animation: shadow .5s linear infinite;
+    }
+        .box::after{
+            border-radius: 5px;
+            background: #fff;
+            animation: rotate .5s linear infinite;
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 50px;
+            height: 50px;
+        }
+@keyframes shadow {
+    0%, 100% {transform: scaleX(1);}
+    50% {transform: scaleX(1.2);}
+}
+
+@keyframes rotate {
+    0% {
+    transform: translateY(0) ;
+  }
+    25% {
+        transform: translateY(10px);
+    }
+    50% {
+        transform: translateY(20px) scale(1.1, 0.9);
+       
+    }
+    75% {
+        ransform: translateY(10px) ;
+    }
+    100% {
+        transform: translateY(0) ;
+    }
+}
+</style>
+</head>
+<body>
+<div class="box">
+</div>
+<script>
+
+</script>
+<script type="text/javascript"  src="//idm-su.baidu.com/su.js"></script>
+</body>
+</html>

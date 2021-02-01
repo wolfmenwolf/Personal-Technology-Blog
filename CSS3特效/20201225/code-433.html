@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>CSS文字动画效果（二） - 素材牛（www.sucainiu.com）</title>
+<script id="jqbb" src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<style type="text/css">
+body { background-color: #fff }
+* {
+	margin:0;
+	padding:0;
+}
+.box {
+	width:100%;
+	height:84%;
+	overflow:hidden;
+	cursor:move;
+}
+.box p {
+	width:40%;
+	margin:0 auto 10px;
+	font-size:14px;
+	height:46px;
+	line-height:46px;
+	cursor:pointer;
+	overflow:hidden;
+	position:relative;
+	text-indent:55px;
+	transition:.7s;
+}
+.box p span {
+	position:absolute;
+	width:30px;
+	height:30px;
+	border:1px solid #333;
+	transform:rotate(45deg);
+	top:7px;
+	left:7px;
+	transition:.7s;
+	margin-left:0;
+}
+.box p font {
+	position:absolute;
+	width:46px;
+	height:46px;
+	text-indent:0;
+	text-align:center;
+	left:0;
+	top:0;
+	transform:rotate(-45deg) translate(0,-10px);
+}
+.box p:hover span {
+	left:82%;
+	transform:rotate(405deg);
+	border-color:#fff;
+	background:#fff;
+	color:#f60;
+}
+.box p:hover {
+	background:#f60;
+	color:#fff;
+}
+</style>
+</head>
+
+<body>
+<div class="box">
+  <div class="main">
+    <p> <span> <font>1</font> </span> aaaaaaaaaaaaaaaaaaaaa </p>
+    <p> <span> <font>2</font> </span> bbbbbbbbbbbbbbbbbbbbbb </p>
+    <p> <span> <font>3</font> </span> ccccccccccccccccccccccc </p>
+    <p> <span> <font>4</font> </span> ddddddddddddddddddddddd </p>
+    <p> <span> <font>5</font> </span> eeeeeeeeeeeeeeeeeeeeeeee </p>
+    <p> <span> <font>6</font> </span> ffffffffffffffffffffffff </p>
+  </div>
+</div>
+
+<script>
+
+</script>
+</body>
+</html>

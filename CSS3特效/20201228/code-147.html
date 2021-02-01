@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>纯css3鼠标经过显示边框弹出 - 素材牛（www.sucainiu.com）</title>
+<script id="jqbb" src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<style type="text/css">
+body { background-color: #fff }
+.div1 {
+	width:200px;
+	height:200px;
+	background:#f5f5f5;
+	border:0px solid #666;
+	position:relative;
+}
+.div1:after,.div1::before {
+	content:"";
+	width:0;
+	height:0;
+	border:2px solid transparent;
+	display:inline-block;
+	box-sizing:border-box;
+	position:absolute;
+}
+.div1:after {
+	top:0;
+	left:0;
+	transition:border-color 0s ease-in 2s,height 0.5s ease-in 1s,width 0.5s ease-in 1.5s;
+}
+/*必须拆解出来，这个是消失时候过渡*/
+.div1:before {
+	right:0;
+	bottom:0;
+	transition:border-color 0s ease-in 0.8s,height 0.5s ease-in,width 0.5s ease-in 0.5s;
+}
+/*必须拆解出来，这个是消失时候过渡*/
+.div1:hover:after {
+	border-top-color:#f60;
+	border-right-color:#f60;
+	height:100%;
+	width:100%;
+	/*transition:height 1s ease-out,width 1s ease-out 1s;
+	*/ transition:width 0.2s ease-out,height 0.2s ease-out 0.2s;
+}
+.div1:hover:before {
+	width:100%;
+	height:100%;
+	border-bottom-color:#367dff;
+	border-left-color:#367dff;
+	transition:width 0.2s ease-in 0.6s,height 0.2s ease-in 0.8s;
+}
+</style>
+<script>
+
+</script>
+</head>
+
+<body>
+鼠标移动到下面
+<div class="div1"></div>
+</body>
+</html>

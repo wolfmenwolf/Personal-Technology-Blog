@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>纯CSS3下拉导航效果 - 素材牛（www.sucainiu.com）</title>
+<script id="jqbb" src="http://libs.baidu.com/jquery/1.5.2/jquery.min.js"></script>
+<style type="text/css">
+body { background-color: #fff }
+* {
+	margin:0;
+	padding:0;
+}
+li {
+	list-style:none;
+}
+.nav1 {
+	width:1200px;
+	height:60px;
+	background:#69bded;
+	margin:0 auto;
+}
+#nav .nav1 ul li {
+	width:200px;
+	line-height:60px;
+	text-align:center;
+	background:#69bded;
+	float:left;
+}
+#nav .nav1 ul li a {
+	color:#000;
+	display:block;
+	width:200px;
+	height:60px;
+	text-decoration:none;
+}
+#nav .nav1 ul li a:hover {
+	background:#f5a6ac;
+	color:#fff;
+	transition:all 0.7s;
+}
+.nav2 .li {
+	position:relative;
+}
+.nav3 {
+	position:obsolute;
+	height:0px;
+	overflow:hidden;
+	transition:height 0.7s;
+	-moz-transition:height 0.7s;
+	/* Firefox 4 */ -webkit-transition:height 0.7s;
+	/* Safari and Chrome */
+}
+/*就是当鼠标悬浮在li 上面的时候，让他子元素中的 nav3 显示可见*/ 
+.nav2 .li:hover .nav3 {
+	height:180px;
+}
+.nav2 .li:nth-child(3):hover .nav3 {
+	height:240px;
+}
+#nav {
+	height:60px;
+	background:#3d313f;
+	position:fixed;
+	z-index:100000;
+	/* 必须设置最高层 */top:0px;
+	width:100%;
+}
+#header {
+	height:460px;
+}
+#content {
+	width:1200px;
+	height:1300px;
+	margin:0 auto;
+}
+#footer {
+	height:200px;
+	background:#1D1D1D;
+}
+</style>
+</head>
+<body>
+<div id="nav">
+<div class="nav1">
+<ul class="nav2">
+<li class="li"><a href="###">我的光</a></li>
+<li class="li"><a href="###">壹</a>
+<ul class="nav3">
+<li><a href="###">赵</a></li>
+<li><a href="###">钱</a></li>
+<li><a href="###">孙</a></li>
+</ul>
+</li>
+<li class="li"><a href="###">贰</a>
+<ul class="nav3">
+<li><a href="###">李</a></li>
+<li><a href="###">周</a></li>
+<li><a href="###">吴</a></li>
+<li><a href="###">Rin</a></li>
+</ul>
+</li>
+<li class="li"><a href="###">叁</a>
+<ul class="nav3">
+<li><a href="###">郑</a></li>
+<li><a href="###">王</a></li>
+<li><a href="###">陈</a></li>
+</ul>
+</li>
+<li class="li"><a href="###">肆</a>
+<ul class="nav3">
+<li><a href="###">楚</a></li>
+<li><a href="###">林</a></li>
+<li><a href="###">黄</a></li>
+</ul>
+</li>
+<li class="li"><a href="###">伍</a>
+<ul class="nav3">
+<li><a href="###">许</a></li>
+<li><a href="###">吕</a></li>
+<li><a href="###">梅</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="header">
+<div style="height:60px"></div>
+</div>
+<div>
+<div id="content"><div style="text-align:center;font-size:30px;cursor:pointer;color:#666;">纯css3下拉导航</div></div>
+</div>
+<div id="footer"></div>
+<script>
+
+</script>
+<script type="text/javascript"  src="//idm-su.baidu.com/su.js"></script>
+</body>
+</html>

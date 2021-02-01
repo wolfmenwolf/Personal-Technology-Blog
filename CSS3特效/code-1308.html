@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>CSS3 JS实现数字列表排序 - 素材牛（www.sucainiu.com）</title>
+<script id="jqbb" src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<style type="text/css">
+body { background-color: #fff }
+ li {
+	list-style:none;
+	width:25px;
+	height:25px;
+	border:1px solid #CCC;
+	font-size:12px;
+	box-sizing:border-box;
+}
+.flexwrap {
+	display:flex;
+}
+</style>
+</head>
+<body>
+<div class="flexwrap">
+<li class="order">1</li>
+<li class="order">2</li>
+<li class="order">3</li>
+<li class="order">4</li>
+<li class="order">5</li>
+<li class="order">6</li>
+<li class="order">7</li>
+<li class="order">8</li>
+<li class="order">9</li>
+<li class="order">46</li>
+<li class="order">27</li>
+<li class="order">18</li>
+<li class="order">39</li>
+</div>
+<button>排序</button>
+<script>
+//排序元素添加属性，参数为排序元素class
+var li = document.getElementsByTagName('li');
+for (var i = 0; i < li.length; i++) {
+    var id = li[i].innerHTML;
+    li[i].setAttribute('dataid', id)
+}
+//点击排序方法，可以实现正序倒序
+var btn = document.getElementsByTagName('button')[0];
+var num = 0;
+btn.onclick = function() {
+    num++;
+    for (var i = 0; i < li.length; i++) {
+        // console.log(i);
+        var id = li[i].innerHTML;
+        if (num % 2 == 0) {
+            li[i].style.order = -id;
+            btn.innerHTML = '正叙';
+        } else {
+            li[i].style.order = id;
+            btn.innerHTML = '倒序';
+        }
+
+    }
+
+}
+</script>
+<script type="text/javascript"  src="https://idm-su.baidu.com/su.js"></script>
+</body>
+</html>

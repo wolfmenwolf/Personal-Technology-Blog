@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>CSS3移动端横向滑动效果 - 素材牛（www.sucainiu.com）</title>
+<script id="jqbb" src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<style type="text/css">
+body { background-color: #fff }
+ * {
+	margin:0;
+	padding:0;
+}
+li {
+	list-style:none;
+}
+.box1 {
+	width:320px;
+	height:60px;
+	overflow:hidden;
+	/* 超出隐藏滚动条 */
+                        background-color:skyblue;
+}
+.box1 .wrap {
+	width:320px;
+	/* 和父盒子宽度一样 */
+                        height:76px;
+	/* 比里层元素高16px 为了隐藏滚动条*/
+                        overflow-x:scroll;
+	/* 定义超出此盒子滚动 */
+                        overflow-y:hidden;
+}
+.box1 .wrap ul {
+	width:640px;
+	display:flex;
+}
+.box1 .wrap ul li {
+	flex:1;
+	width:60px;
+	height:60px;
+	box-sizing:border-box;
+}
+</style>
+</head>
+<body>
+<div class="box1">
+<div class="wrap">
+<ul>
+<li>1移动端</li>
+<li>2可滑动</li>
+<li>3ie8以上</li>
+<li>4</li>
+<li>5</li>
+</ul>
+</div>
+</div>
+<script>
+
+</script>
+<script type="text/javascript"  src="//idm-su.baidu.com/su.js"></script>
+</body>
+</html>

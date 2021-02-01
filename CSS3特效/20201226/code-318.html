@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>CSS3 3D魔方 - 素材牛（www.sucainiu.com）</title>
+<script id="jqbb" src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<style type="text/css">
+body { background-color: #fff }
+div {
+	width:200px;
+	height:200px;
+	margin-top:100px;
+	margin-right:auto;
+	margin-left:auto;
+}
+.div1 {
+	background-color:blue;
+	position:absolute;
+	top:0px;
+	transform:translateZ(100px);
+	/* transform:rotate3d(90,1,1,90deg);
+	*/
+}
+.div2 {
+	background-color:cyan;
+	position:absolute;
+	top:0px;
+	transform:rotateY(90deg) translateZ(100px);
+}
+.div3 {
+	background-color:red;
+	position:absolute;
+	top:0px;
+	transform:rotateX(90deg) translateZ(100px);
+}
+.div4 {
+	background-color:purple;
+	position:absolute;
+	top:0px;
+	transform:rotateY(180deg) translateZ(100px);
+}
+.div5 {
+	background-color:green;
+	position:absolute;
+	top:0px;
+	transform:rotateY(-90deg) translateZ(100px);
+}
+.div6 {
+	background-color:orange;
+	position:absolute;
+	top:0px;
+	transform:rotateX(-90deg) translateZ(100px);
+}
+.whole {
+	width:200px;
+	position:relative;
+	transition:all 3s;
+	/* 设置使得变形能体现立体效果，通常给需要变形的元素的父元素设置 */
+			transform-style:preserve-3d;
+}
+.whole:hover {
+	transform:translate3d(0px,0px,100px) rotate3d(360,360,360,360deg);
+}
+</style>
+</head>
+
+<body>
+<div class="whole">
+    <div class="div1"></div>
+    <div class="div2"></div>
+    <div class="div3"></div>
+    <div class="div4"></div>
+    <div class="div5"></div>
+    <div class="div6"></div>
+</div>
+
+<script>
+
+</script>
+</body>
+</html>

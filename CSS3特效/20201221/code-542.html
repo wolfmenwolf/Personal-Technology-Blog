@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>手风琴式相册 - 素材牛（www.sucainiu.com）</title>
+<script id="jqbb" src="http://libs.baidu.com/jquery//jquery.min.js"></script>
+<style type="text/css">
+body { background-color: #fff }
+* {
+	margin: 0;
+	padding: 0;
+}
+
+#wrap {
+	width: 800px;
+	height: 300px;
+	margin: 0 auto;
+	border: 5px solid #009999;
+	border-radius: 10px;
+	margin-top: 10px;
+	position: relative;
+	overflow: hidden;
+}
+
+input {
+	display: none;
+}
+
+label {
+	width: 300px;
+	height: 400px;
+	position: absolute;
+	top: 0;
+	transition: 0.5s;
+}
+
+label:nth-of-type(1) {
+	background: url(http://www.sucainiu.com/themes/images/demo/500x300-1.png) no-repeat;
+	left: 0;
+}
+
+label:nth-of-type(2) {
+	background: url(http://www.sucainiu.com/themes/images/demo/500x300-2.png) no-repeat;
+	left: 100px;
+}
+
+label:nth-of-type(3) {
+	background: url(http://www.sucainiu.com/themes/images/demo/500x300-3.png) no-repeat;
+	left: 200px;
+}
+
+label:nth-of-type(4) {
+	background: url(http://www.sucainiu.com/themes/images/demo/500x300-4.png) no-repeat;
+	left: 300px;
+}
+
+label:nth-of-type(5) {
+	background: url(http://www.sucainiu.com/themes/images/demo/500x300-5.png) no-repeat;
+	left: 400px;
+}
+
+label:nth-of-type(6) {
+	background: url(http://www.sucainiu.com/themes/images/demo/500x300-6.png) no-repeat;
+	left: 500px;
+}
+
+input:checked~label {
+	transform: translateX(200px);
+	-webkit-transform: translateX(200px);
+}
+
+</style>
+</head>
+
+<body>
+<div id="wrap">
+	<form action="">
+		<label for="input1"></label>
+		<input type="radio" id="input1" name="img"/>
+		<label for="input2"></label>
+		<input type="radio" id="input2" name="img"/>
+		<label for="input3"></label>
+		<input type="radio" id="input3" name="img"/>
+		<label for="input4"></label>
+		<input type="radio" id="input4" name="img"/>
+		<label for="input5"></label>
+		<input type="radio" id="input5" name="img"/>
+		<label for="input6"></label>
+		<input type="radio" id="input6" name="img"/>
+	</form>
+</div>
+
+<script>
+
+</script>
+</body>
+</html>

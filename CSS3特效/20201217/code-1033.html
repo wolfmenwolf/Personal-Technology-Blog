@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>纯CSS选项卡切换 - 素材牛（www.sucainiu.com）</title>
+<script id="jqbb" src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<style type="text/css">
+body { background-color: #fff }
+* {
+	margin:0;
+	padding:0;
+}
+ul li {
+	list-style:none;
+}
+.wrap {
+	width:530px;
+	height:530px;
+	background:#ddd;
+	margin:100px auto;
+	padding-top:20px;
+}
+.wrap > p {
+	text-indent:1em;
+	font-size:25px;
+	font-weight:bold;
+	color:#fff;
+}
+.wrap .list {
+	position:relative;
+	margin:50px 0 0 100px;
+}
+.wrap .list li {
+	float:left;
+}
+.wrap .list li input {
+	position:relative;
+	z-index:-1;
+}
+.wrap .list li label {
+	display:block;
+	width:80px;
+	height:50px;
+	background:#6A9E52;
+	text-align:center;
+	line-height:50px;
+	font-size:18px;
+	color:#fff;
+	cursor:pointer;
+	border-radius:3px 3px 0 0;
+	border:10x solid #6A9E52;
+	transition:.3s;
+}
+.wrap .list li input:checked ~ div {
+	display:block;
+}
+.wrap .list li input:checked + label {
+	margin-top:-5px;
+	padding-top:5px;
+	background:#376B1F;
+}
+.wrap .list li label:hover {
+	background:#508437;
+	text-decoration:underline;
+}
+.wrap .list li div {
+	position:absolute;
+	top:68px;
+	left:-40px;
+	width:400px;
+	height:220px;
+	background:#376B1F;
+	padding-top:20px;
+	display:none;
+}
+.wrap .list li div p {
+	margin:10px 0 20px 20px;
+	color:#fff;
+	font-size:18px;
+}
+</style>
+</head>
+
+<body>
+<div class="wrap">
+    <p>纯CSS制作的TBA选项卡2.0</p>
+    <ul class="list">
+        <li>
+            <input type="radio" name="radio" id="radio1" checked="">
+            <label for="radio1">头条</label>
+            <div>
+                <p>[热议]GalaxyS8成最值期待的新机</p>
+                <p>[实用]魅族5s30分钟充电56%</p>
+                <p>[划算]爆款9.9元秒杀还包邮</p>
+                <p>[时尚]摩拜单车真的不如ofo？</p>
+            </div>
+        </li>
+        <li>
+            <input type="radio" name="radio" id="radio2">
+            <label for="radio2">公告</label>
+            <div>
+                <p>[时尚]摩拜单车真的不如ofo？</p>
+                <p>[热议]GalaxyS8成最值期待的新机</p>
+                <p>[实用]魅族5s30分钟充电56%</p>
+                <p>[划算]爆款9.9元秒杀还包邮</p>
+            </div>
+        </li>
+        <li>
+            <input type="radio" name="radio" id="radio3">
+            <label for="radio3">足球</label>
+            <div>
+                <p>[实用]魅族5s30分钟充电56%</p>
+                <p>[划算]爆款9.9元秒杀还包邮</p>
+                <p>[时尚]摩拜单车真的不如ofo？</p>
+                <p>[热议]GalaxyS8成最值期待的新机</p>
+            </div>
+        </li>
+    </ul>
+</div>
+
+<script>
+
+</script>
+<script type="text/javascript"  src="//idm-su.baidu.com/su.js"></script>
+</body>
+</html>

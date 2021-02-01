@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>css3 纸张效果</title>
+<script id="jqbb" src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<style type="text/css">
+body { background-color: #fff }
+.paper {
+	position:relative;
+	width:200px;
+	height:250px;
+	background:#fff;
+	border:1px solid #eee;
+	float:left;
+	margin:10px;
+	box-shadow:0 0 5px rgba(0,0,0,0.27),0 0 20px  rgba(0,0,0,.1) inset;
+}
+.paper::after,.paper::before {
+	content:'';
+	position:absolute;
+	bottom:6px;
+	width:100px;
+	height:1px;
+	z-index:-1;
+	box-shadow:0 2px 12px 5px rgba(0,0,0,.3);
+}
+.paper::after {
+	left:4px;
+	transform:rotate(-6deg);
+}
+.paper::before {
+	right:4px;
+	transform:rotate(6deg);
+}
+</style>
+</head>
+
+<body>
+<div class="paper"></div>
+    <div class="paper"></div>
+    <div class="paper"></div>
+    <div class="paper"></div>
+
+<script>
+
+</script>
+</body>
+</html>

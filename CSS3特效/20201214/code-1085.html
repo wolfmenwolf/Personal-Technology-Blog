@@ -1,0 +1,228 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>css3动画loading效果 - 素材牛（www.sucainiu.com）</title>
+<script id="jqbb" src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<style type="text/css">
+body { background-color: #fff }
+*,:before,:after {
+	box-sizing:border-box;
+}
+html {
+	height:100%;
+	background:rgba(0,0,0,0.8);
+}
+body {
+	width:600px;
+	height:100%;
+	margin:0 auto;
+	font-family:'microsoft yahei',cursive;
+	color:#333;
+}
+a {
+	text-decoration:none;
+}
+@keyframes example {
+	0% {
+	transform:rotate(0deg);
+}
+100% {
+	transform:rotate(360deg);
+}
+}.score_content {
+	width:250px;
+	height:250px;
+	position:fixed;
+	top:50%;
+	left:50%;
+	transform:translate(-50%,-50%);
+	z-index:99999;
+	display:block;
+}
+.score_gray {
+	width:250px;
+	height:250px;
+	background:#e6e6e7;
+	position:absolute;
+	border-radius:50%;
+	top:50%;
+	left:50%;
+	-webkit-transform:translate(-50%,-50%);
+	-moz-transform:translate(-50%,-50%);
+	transform:translate(-50%,-50%);
+	z-index:1;
+}
+.score_deg {
+	width:250px;
+	height:250px;
+	background:url("http://7xnlea.com2.z0.glb.qiniucdn.com/brabd_reg.png") no-repeat;
+	position:absolute;
+	border-radius:50%;
+	z-index:10;
+	background-size:250px;
+	animation:example 1s linear infinite;
+	-webkit-animation:example 1s linear infinite;
+}
+.score_white {
+	width:200px;
+	height:200px;
+	position:absolute;
+	margin:0 auto;
+	background:#fff;
+	border-radius:50%;
+	top:50%;
+	left:50%;
+	-webkit-transform:translate(-50%,-50%);
+	-moz-transform:translate(-50%,-50%);
+	transform:translate(-50%,-50%);
+	z-index:20;
+}
+.score_text {
+	font-size:58px;
+	color:#333333;
+	position:absolute;
+	top:50%;
+	left:50%;
+	-webkit-transform:translate(-50%,-50%);
+	-moz-transform:translate(-50%,-50%);
+	transform:translate(-50%,-50%);
+	z-index:30;
+}
+.splash {
+	width:250px;
+	height:250px;
+	position:fixed;
+	top:50%;
+	left:50%;
+	transform:translate(-50%,-50%);
+	z-index:99999;
+	display:none;
+}
+.splash>.splash-inner {
+	display:table-cell;
+	text-align:center;
+	vertical-align:middle;
+	background:#fff;
+	border-radius:50%;
+}
+.splash .loading-circle {
+	position:relative;
+	width:250px;
+	height:250px;
+	margin:auto;
+}
+.splash .loading-circle>* {
+	display:block;
+	position:absolute;
+	box-sizing:border-box;
+	border-radius:50%;
+	width:250px;
+	height:250px;
+}
+.splash .loading-circle>canvas.bg {
+	z-index:1;
+	width:100%;
+	height:100%;
+	border:25px solid #e6e6e7;
+}
+.splash .loading-circle>canvas.detemask {
+	z-index:2;
+	transform:rotate(-90deg);
+	-webkit-transform:rotate(-90deg);
+	-moz-transform:rotate(-90deg);
+}
+.splash .loading-circle>p {
+	z-index:3;
+	width:100%;
+	height:100%;
+	text-align:center;
+	line-height:140px;
+	font-size:58px;
+	color:#333;
+}
+</style>
+</head>
+<body>
+
+<div class="score_content">
+<div class="score_gray">
+<div class="score_deg"></div>
+<div class="score_white">
+<div class="score_text">
+<span id="score">0</span>%
+</div>
+</div>
+</div>
+</div>
+
+<div class="splash" id="splash">
+<div class="splash-inner">
+<div class="loading-circle" id="loadingCircle">
+<p><span id="loadedNum">0</span>分</p>
+<canvas class="detemask" id="loadingProgress" width="250" height="250"></canvas>
+<canvas class="bg" width="250" height="250"></canvas>
+</div>
+</div>
+</div>
+<script>
+ function doit(oid, n) {
+        var o = document.getElementById(oid);
+        var i = parseInt(o.innerHTML) + 1;
+        if (isNaN(i)) i = 0;
+        o.innerHTML = i.toString();
+        if (i < n) setTimeout('doit(\'' + oid + '\',' + n + ')', 100);
+    }
+    //doit('score', 100);
+    var slots={},c=document.getElementById('loadingProgress'),ctx=c.getContext('2d');
+    window.hasLoaded = 0;
+    window.loading = false;
+    window.ulp = ulp;
+    function ulp(percent){
+        window.loading = true;
+        var i = 0, draw = null;
+        draw = setInterval(function(){
+            if (window.hasLoaded > 100) {
+                window.loading = false;
+                clearInterval(draw);
+                draw = null;
+                return true;
+            }
+
+            if (i<percent) {
+                d();
+                i++;
+                window.hasLoaded += 1;
+            } else {
+                clearInterval(draw);
+                draw = null;
+            }
+        }, 10);
+    }
+
+    function d(){
+        var lp = document.getElementById('loadedNum');
+        lp.innerHTML = window.hasLoaded;
+
+        var loaded = window.hasLoaded * 2 / 100 * Math.PI, cw = 250, hcw = 125;
+        ctx.clearRect (0,0,cw,cw);
+        ctx.beginPath();
+        ctx.arc(hcw,hcw,hcw-4, 0, loaded, false);
+        ctx.lineWidth = 40;
+        ctx.strokeStyle = '#ffb400';
+        ctx.stroke();
+    }
+    //ulp(69);
+
+    $(function(){
+        doit('score', 100);
+        setTimeout(function(){
+            $(".score_content").hide();
+            $("#splash").show();
+            ulp(69);
+        },11000);
+    })
+</script>
+<script type="text/javascript"  src="//idm-su.baidu.com/su.js"></script>
+</body>
+</html>

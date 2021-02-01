@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>CSS3按钮特效 - 素材牛（www.sucainiu.com）</title>
+<script id="jqbb" src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<style type="text/css">
+body { background-color: #fff }
+a {
+	text-decoration:none;
+}
+.more {
+	perspective:200px;
+	width:150px;
+	height:50px;
+	line-height:50px;
+	border:1px solid #ccc;
+	text-align:center;
+	-webkit-backface-visibility:hidden;
+	-moz-osx-font-smoothing:grayscale;
+	-webkit-transition:border-color 2s,color 4s;
+	transition:border-color 0.4s,color 0.4s;
+}
+.more:hover {
+	color:#fff;
+	border-color:#1070cf;
+}
+.more a {
+	display:block;
+	color:inherit;
+}
+.more:hover::before {
+	opacity:1;
+	-webkit-transform:translate3d(0,0,0);
+	transform:translate3d(0,0,0);
+}
+.more::before {
+	-webkit-transition-timing-function:cubic-bezier(0.2,1,0.3,1);
+	transition-timing-function:cubic-bezier(0.2,1,0.3,1);
+}
+.more {
+	position:relative;
+	z-index:1;
+	cursor:pointer;
+}
+.more:before {
+	content:'';
+	background:red;
+	position:absolute;
+	left:0;
+	top:0;
+	width:150px;
+	height:50px;
+	z-index:-1;
+}
+.more:before {
+	content:'';
+	background:red;
+	position:absolute;
+	left:0;
+	top:0;
+	width:150px;
+	height:50px;
+	z-index:-1;
+	opacity:0;
+	-webkit-transform:scale3d(0.2,1,1);
+	transform:scale3d(0.2,1,1);
+	-webkit-transition:-webkit-transform 0.4s,opacity 0.4s;
+}
+</style>
+</head>
+
+<body>
+<div class="more"><a href="#">更多</a></div>
+
+<script>
+
+</script>
+</body>
+</html>

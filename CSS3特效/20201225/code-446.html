@@ -1,0 +1,147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>CSS判断鼠标进入方向 - 素材牛（www.sucainiu.com）</title>
+<script id="jqbb" src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<style type="text/css">
+body { background-color: #fff }
+.user_wns_wrjj990 {
+	width:1000px;
+	height:auto;
+	overflow:hidden;
+	cursor:pointer;
+}
+.user_wns_wrjj990 [fox=con] {
+	width:calc((990px - 10px * 3) / 4);
+	background:url(http://img14.360buyimg.com/cms/jfs/t2440/158/2211029431/63092/8a132fbf/56f8e700N59df203e.jpg) -616px 0 no-repeat;
+	height:calc((990px - 10px * 3) / 4 / 3 * 4);
+	position:relative;
+	overflow:hidden;
+	margin:10px 10px 0 0;
+	float:left;
+}
+.user_wns_wrjj990 [fox=con] [fox$=_c]:nth-of-type(2n-1) {
+	width:240px;
+	height:240px;
+	transform:rotate(45deg) skew(8deg,8deg);
+	position:absolute;
+	left:2px;
+}
+.user_wns_wrjj990 [fox=con] [fox$=_c]:nth-of-type(2n) {
+	width:240px;
+	height:240px;
+	transform:rotate(45deg) skew(8deg,8deg);
+	position:absolute;
+	top:42px;
+}
+.user_wns_wrjj990 [fox^=top] {
+	top:-151px;
+}
+.user_wns_wrjj990 [fox^=right] {
+	left:148px;
+}
+.user_wns_wrjj990 [fox^=bottom] {
+	bottom:-151px;
+}
+.user_wns_wrjj990 [fox^=left] {
+	right:147px;
+}
+.user_wns_wrjj990 [fox=con]:hover [fox$=_c] {
+	transform:none;
+	width:100%;
+	height:100%;
+	top:0;
+	left:0;
+}
+.user_wns_wrjj990 [fox=con] [fox$=_c]:hover {
+	z-index:5;
+}
+.user_wns_wrjj990 [fox$=_c] [fox$=_con] {
+	display:block;
+	width:calc((990px - 10px * 3) / 4);
+	height:calc((990px - 10px * 3) / 4 / 3 * 4);
+	background-image:linear-gradient(0deg,#000,#000,#000);
+	opacity:0.5;
+}
+.user_wns_wrjj990 [fox^=top] [fox$=_con] {
+	transform:translateY(-100%);
+}
+.user_wns_wrjj990 [fox^=bottom] [fox$=_con] {
+	transform:translateY(100%);
+}
+.user_wns_wrjj990 [fox^=left] [fox$=_con] {
+	transform:translateX(-100%);
+}
+.user_wns_wrjj990 [fox^=right] [fox$=_con] {
+	transform:translateX(100%);
+}
+.user_wns_wrjj990 [fox$=_c]:hover [fox$=_con] {
+	transform:translateY(0);
+	transition:all .3s linear;
+	transform:translateX(0);
+}
+</style>
+</head>
+
+<body>
+<div style="width:100%; height:1080px;background-color: #fcd7e2; ">
+    <div style="width:990px; height:auto; margin:0 auto;">
+        <div class="user_wns_wrjj990">
+            <div fox="con">
+                <div fox="top_c"><a fox="con_con"></a></div>
+                <div fox="right_c"><a fox="con_con"></a></div>
+                <div fox="bottom_c"><a fox="con_con"></a></div>
+                <div fox="left_c"><a fox="con_con"></a></div>
+            </div>
+            <div fox="con">
+                <div fox="top_c"><a fox="con_con"></a></div>
+                <div fox="right_c"><a fox="con_con"></a></div>
+                <div fox="bottom_c"><a fox="con_con"></a></div>
+                <div fox="left_c"><a fox="con_con"></a></div>
+            </div>
+            <div fox="con">
+                <div fox="top_c"><a fox="con_con"></a></div>
+                <div fox="right_c"><a fox="con_con"></a></div>
+                <div fox="bottom_c"><a fox="con_con"></a></div>
+                <div fox="left_c"><a fox="con_con"></a></div>
+            </div>
+            <div fox="con">
+                <div fox="top_c"><a fox="con_con"></a></div>
+                <div fox="right_c"><a fox="con_con"></a></div>
+                <div fox="bottom_c"><a fox="con_con"></a></div>
+                <div fox="left_c"><a fox="con_con"></a></div>
+            </div>
+            <div fox="con">
+                <div fox="top_c"><a fox="con_con"></a></div>
+                <div fox="right_c"><a fox="con_con"></a></div>
+                <div fox="bottom_c"><a fox="con_con"></a></div>
+                <div fox="left_c"><a fox="con_con"></a></div>
+            </div>
+            <div fox="con">
+                <div fox="top_c"><a fox="con_con"></a></div>
+                <div fox="right_c"><a fox="con_con"></a></div>
+                <div fox="bottom_c"><a fox="con_con"></a></div>
+                <div fox="left_c"><a fox="con_con"></a></div>
+            </div>
+            <div fox="con">
+                <div fox="top_c"><a fox="con_con"></a></div>
+                <div fox="right_c"><a fox="con_con"></a></div>
+                <div fox="bottom_c"><a fox="con_con"></a></div>
+                <div fox="left_c"><a fox="con_con"></a></div>
+            </div>
+            <div fox="con">
+                <div fox="top_c"><a fox="con_con"></a></div>
+                <div fox="right_c"><a fox="con_con"></a></div>
+                <div fox="bottom_c"><a fox="con_con"></a></div>
+                <div fox="left_c"><a fox="con_con"></a></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+</script>
+</body>
+</html>

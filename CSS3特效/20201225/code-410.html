@@ -1,0 +1,162 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>CSS文字动画效果（一） - 素材牛（www.sucainiu.com）</title>
+<script id="jqbb" src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<style type="text/css">
+body { background-color: #fff }
+* {
+	box-sizing:border-box;
+}
+body {
+	font-size:62.5%;
+}
+h1,h2,h3 {
+	font-family:'PT Sans',sans-serif;
+	text-transform:uppercase;
+}
+h2 {
+	font-size:1.6em;
+	margin:0;
+	padding:10px;
+	border-top:1px solid #ccc;
+}
+h3 {
+	margin:0;
+	padding:10px;
+}
+.Outer {
+	background:#f1f1f1;
+	text-align:center;
+	margin-top:30px;
+	/*border-top:1px solid #004eff;
+	border-bottom:1px solid #004eff;
+	*/
+}
+.Outer:first-child {
+	margin-top:0;
+}
+.Wrapper {
+	text-align:center;
+	background-color:#fff;
+	padding:10px;
+}
+.content {
+	display:inline-block;
+	text-align:center;
+	font-family:'Francois One',Helvetica,Arial,sans-serif;
+	font-size:5rem;
+	color:#deeaff;
+	text-decoration:none;
+	text-shadow:1.5px 1.5px 0 #818acc,-1.5px -1.5px 0 #818acc,-1.5px -1.5px 0 #818acc,-1.5px 1.5px 0 #818acc,1.5px -1.5px 0 #818acc;
+	transition:all 400ms ease-in-out;
+}
+.content-pushDown {
+	text-shadow:1.5px 1.5px 0 #004eff,0px 1.5px 0 #004eff,-1.5px -1.5px 0 #004eff,-1.5px -1.5px 0 #004eff,-1.5px 1.5px 0 #004eff,1.5px -1.5px 0 #004eff,0.77782px 0.77782px 0 #7793fb,1.55563px 1.55563px 0 #7793fb,2.33345px 2.33345px 0 #7793fb,3.11127px 3.11127px 0 #7793fb,3.88909px 3.88909px 0 #7793fb,4.6669px 4.6669px 0 #7793fb,5.44472px 5.44472px 0 #7793fb,6.22254px 6.22254px 0 #7793fb,7.00036px 7.00036px 0 #7793fb,7.77817px 7.77817px 0 #7793fb;
+}
+.content-pushDown:hover {
+	transform:translate(9px,9px);
+	text-shadow:1.5px 1.5px 0 #818acc,-1.5px -1.5px 0 #818acc,-1.5px -1.5px 0 #818acc,-1.5px 1.5px 0 #818acc,1.5px -1.5px 0 #818acc;
+}
+.content-raiseUp:hover {
+	transform:translate(-9px,-9px);
+	text-shadow:1.5px 1.5px 0 #004eff,0px 1.5px 0 #004eff,-1.5px -1.5px 0 #004eff,-1.5px -1.5px 0 #004eff,-1.5px 1.5px 0 #004eff,1.5px -1.5px 0 #004eff,0.77782px 0.77782px 0 #7793fb,1.55563px 1.55563px 0 #7793fb,2.33345px 2.33345px 0 #7793fb,3.11127px 3.11127px 0 #7793fb,3.88909px 3.88909px 0 #7793fb,4.6669px 4.6669px 0 #7793fb,5.44472px 5.44472px 0 #7793fb,6.22254px 6.22254px 0 #7793fb,7.00036px 7.00036px 0 #7793fb,7.77817px 7.77817px 0 #7793fb;
+}
+.content-shadow:hover {
+	transform:translate(5px,0);
+}
+.content-shadow.content-raiseUp:hover {
+	transform:translate(-5px,0);
+}
+/*.color {
+	background-color:#00b0ff;
+}
+*/
+.color .content {
+	color:#9beaf8;
+	text-shadow:1.5px 1.5px 0 #76a3d3,-1.5px -1.5px 0 #76a3d3,-1.5px -1.5px 0 #76a3d3,-1.5px 1.5px 0 #76a3d3,1.5px -1.5px 0 #76a3d3;
+}
+.color .content-pushDown {
+	text-shadow:1.5px 1.5px 0 #fff,0px 1.5px 0 #fff,-1.5px -1.5px 0 #fff,-1.5px -1.5px 0 #fff,-1.5px 1.5px 0 #fff,1.5px -1.5px 0 #fff,0.77782px 0.77782px 0 #154ae6,1.55563px 1.55563px 0 #154ae6,2.33345px 2.33345px 0 #154ae6,3.11127px 3.11127px 0 #154ae6,3.88909px 3.88909px 0 #154ae6,4.6669px 4.6669px 0 #154ae6,5.44472px 5.44472px 0 #154ae6,6.22254px 6.22254px 0 #154ae6,7.00036px 7.00036px 0 #154ae6,7.77817px 7.77817px 0 #154ae6;
+}
+.color .content-pushDown:hover {
+	text-shadow:1.5px 1.5px 0 #76a3d3,-1.5px -1.5px 0 #76a3d3,-1.5px -1.5px 0 #76a3d3,-1.5px 1.5px 0 #76a3d3,1.5px -1.5px 0 #76a3d3;
+}
+.color .content-raiseUp:hover {
+	text-shadow:1.5px 1.5px 0 #fff,0px 1.5px 0 #fff,-1.5px -1.5px 0 #fff,-1.5px -1.5px 0 #fff,-1.5px 1.5px 0 #fff,1.5px -1.5px 0 #fff,0.77782px 0.77782px 0 #154ae6,1.55563px 1.55563px 0 #154ae6,2.33345px 2.33345px 0 #154ae6,3.11127px 3.11127px 0 #154ae6,3.88909px 3.88909px 0 #154ae6,4.6669px 4.6669px 0 #154ae6,5.44472px 5.44472px 0 #154ae6,6.22254px 6.22254px 0 #154ae6,7.00036px 7.00036px 0 #154ae6,7.77817px 7.77817px 0 #154ae6;
+}
+svg {
+	line-height:1.2;
+	width:410px;
+	height:1.5em;
+}
+.content--svg text,.content--svg stop {
+	transition:all 350ms ease-in-out;
+}
+.content--svg text {
+	text-transform:uppercase;
+	fill:url(#striped);
+	text-shadow:1.5px 1.5px 0 #818acc,-1.5px -1.5px 0 #818acc,-1.5px -1.5px 0 #818acc,-1.5px 1.5px 0 #818acc,1.5px -1.5px 0 #818acc;
+}
+.content--svg:hover text {
+	text-shadow:1.5px 1.5px 0 #004eff,0px 1.5px 0 #004eff,-1.5px -1.5px 0 #004eff,-1.5px -1.5px 0 #004eff,-1.5px 1.5px 0 #004eff,1.5px -1.5px 0 #004eff,0.77782px 0.77782px 0 #7793fb,1.55563px 1.55563px 0 #7793fb,2.33345px 2.33345px 0 #7793fb,3.11127px 3.11127px 0 #7793fb,3.88909px 3.88909px 0 #7793fb,4.6669px 4.6669px 0 #7793fb,5.44472px 5.44472px 0 #7793fb,6.22254px 6.22254px 0 #7793fb,7.00036px 7.00036px 0 #7793fb,7.77817px 7.77817px 0 #7793fb;
+}
+.content--svg stop {
+	stop-color:#deeaff;
+}
+.content--svg:hover stop {
+	stop-color:#fff;
+}
+.content--svg:hover stop:nth-child(2),.content--svg:hover stop:nth-child(3) {
+	stop-color:#76a3d3;
+}
+.color .content--svg text {
+	fill:url(#stripedColor);
+	text-shadow:1.5px 1.5px 0 #76a3d3,-1.5px -1.5px 0 #76a3d3,-1.5px -1.5px 0 #76a3d3,-1.5px 1.5px 0 #76a3d3,1.5px -1.5px 0 #76a3d3;
+}
+.color .content--svg:hover text {
+	text-shadow:1.5px 1.5px 0 #fff,0px 1.5px 0 #fff,-1.5px -1.5px 0 #fff,-1.5px -1.5px 0 #fff,-1.5px 1.5px 0 #fff,1.5px -1.5px 0 #fff,0.77782px 0.77782px 0 #154ae6,1.55563px 1.55563px 0 #154ae6,2.33345px 2.33345px 0 #154ae6,3.11127px 3.11127px 0 #154ae6,3.88909px 3.88909px 0 #154ae6,4.6669px 4.6669px 0 #154ae6,5.44472px 5.44472px 0 #154ae6,6.22254px 6.22254px 0 #154ae6,7.00036px 7.00036px 0 #154ae6,7.77817px 7.77817px 0 #154ae6;
+}
+.color stop {
+	stop-color:#9beaf8;
+}
+.color .content--svg:hover stop:nth-child(2),.color .content--svg:hover stop:nth-child(3) {
+	stop-color:#1c00f9;
+}
+</style>
+</head>
+
+<body>
+<h2 class="Outer">鼠标滑入时，阴影消失 (阴影效果)</h2>
+<div class="Wrapper color">
+    <a href="" class="content content-pushDown content-shadow">素材牛</a>
+</div>
+<div class="Wrapper">
+    <a href="" class="content content-pushDown content-shadow">素材牛</a>
+</div>
+
+<h2 class="Outer">鼠标滑入时，阴影显现 (阴影效果)</h2>
+<div class="Wrapper color">
+    <a href="" class="content content-raiseUp content-shadow">素材牛</a>
+</div>
+<div class="Wrapper">
+    <a href="" class="content content-raiseUp content-shadow">素材牛</a>
+</div>
+
+
+<h2 class="Outer">鼠标滑入时，添加条纹</h2>
+<div class="Wrapper color">
+    <a href="#" class="content content-raiseUp content--svg">
+        <svg><defs><lineargradient id="stripedColor" x1="0" x2="0" y1="0%" y2="4%" spreadmethod="repeat"><stop offset="0%" stop-color="#154ae6"></stop><stop offset="50%" stop-color="#154ae6"></stop><stop offset="51%" stop-color="#fff"></stop><stop offset="99%" stop-color="#fff"></stop><stop offset="100%" stop-color="#154ae6"></stop></lineargradient></defs><text y="1.2em">素材牛</text></svg></a>
+</div>
+<div class="Wrapper">
+    <a href="#" class="content content-raiseUp content--svg">
+        <svg><defs><lineargradient id="striped" x1="0" x2="0" y1="0%" y2="4%" spreadmethod="repeat"><stop offset="0%" stop-color="#154ae6"></stop><stop offset="50%" stop-color="#154ae6"></stop><stop offset="51%" stop-color="#fff"></stop><stop offset="99%" stop-color="#fff"></stop><stop offset="100%" stop-color="#154ae6"></stop></lineargradient></defs><text y="1.2em">素材牛</text></svg></a>
+</div>
+
+<script>
+
+</script>
+</body>
+</html>

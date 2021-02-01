@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>纯CSS3实现标题线框动效 - 素材牛（www.sucainiu.com）</title>
+<script id="jqbb" src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<style type="text/css">
+body { background-color: #fff }
+* {
+	margin: 0;
+	padding: 0
+}
+
+html,css {
+	width: 100%;
+	height: 100%
+}
+
+.position {
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	margin-top: 15%
+}
+
+#workarea {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: #1e1a3e;
+	font-family: Raleway
+}
+
+#personal {
+	color: white;
+	text-decoration: none;
+	position: absolute;
+	bottom: 15px;
+	right: 2%
+}
+
+.spot {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0
+}
+
+.svg-wrapper {
+	margin-top: 0;
+	position: relative;
+	width: 150px;
+	height: 40px;
+	display: inline-block;
+	border-radius: 3px;
+	margin-left: 5px;
+	margin-right: 5px
+}
+
+#shape {
+	stroke-width: 6px;
+	fill: transparent;
+	stroke: #009FFD;
+	stroke-dasharray: 85 400;
+	stroke-dashoffset: -220;
+	transition: 1s all ease
+}
+
+#text {
+	margin-top: -35px;
+	text-align: center
+}
+
+#text a {
+	color: white;
+	text-decoration: none;
+	font-weight: 100;
+	font-size: 1.1em
+}
+
+.svg-wrapper:hover #shape {
+	stroke-dasharray: 50 0;
+	stroke-width: 3px;
+	stroke-dashoffset: 0;
+	stroke: #06D6A0
+}
+</style>
+<script>
+
+</script>
+</head>
+
+<body>
+<div id="workarea">
+	<div class="position">
+		<div class="svg-wrapper">
+			<svg height="40" width="150" xmlns="http://www.w3.org/2000/svg"><rect id="shape" height="40" width="150">
+			<div id="text">
+				<a href=""><span class="spot"></span>Button 1</a>
+			</div>
+			</svg>
+		</div>
+		<div class="svg-wrapper">
+			<svg height="40" width="150" xmlns="http://www.w3.org/2000/svg"><rect id="shape" height="40" width="150">
+			<div id="text">
+				<a href=""><span class="spot"></span>Button 2</a>
+			</div>
+			</svg>
+		</div>
+		<div class="svg-wrapper">
+			<svg height="40" width="150" xmlns="http://www.w3.org/2000/svg"><rect id="shape" height="40" width="150">
+			<div id="text">
+				<a href=""><span class="spot"></span>Button 3</a>
+			</div>
+			</svg>
+		</div>
+	</div>
+</div>
+</body>
+</html>

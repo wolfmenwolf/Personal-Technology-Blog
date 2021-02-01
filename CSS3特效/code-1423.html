@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>CSS3绘制3D模型</title>
+<script id="jqbb" src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<style type="text/css">
+body { background-color: #fff }
+ * {
+	margin:0;
+	padding:0
+}
+html,body {
+	width:100%;
+	height:100%;
+	background:black;
+	display:flex;
+	overflow:hidden;
+}
+#heart3d {
+	width:200px;
+	height:260px;
+	-border:1px solid yellow;
+	margin:auto;
+	position:relative;
+	transform-style:preserve-3d;
+	/*变换类型：保持3D*/
+            animation:play 10s linear infinite;
+	/*无限线性交替动画*/
+}
+#heart3d div {
+	position:absolute;
+	width:200px;
+	height:260px;
+	border:solid red;
+	border-width:1px 1px 0 0;
+	-border-radius:40% 50%;
+	/*X轴  50左上角   50%右上角和左下角  0右下角  / Y轴  40% 左上角   50%右上角和左下角  0右下角*/
+            border-radius:50% 50% 0 / 40% 50% 0;
+}
+@keyframes play {
+	from {
+	transform:rotateY(0deg) rotateX(0deg)
+}
+to {
+	transform:rotateY(360deg) rotateX(360deg)
+}
+}
+</style>
+</head>
+<body>
+<div id="heart3d"></div>
+<script>
+var style = document.getElementsByTagName('style')[0];
+var heart3d = document.getElementById('heart3d');
+var str = '';
+var css = '';
+for (var i = 0; i < 36; i++) {
+    str += '<div></div>';
+    css += '#heart3d div:nth-child(' + (i + 1) + '){transform:rotateY(' + i * 10 + 'deg) rotate(45deg) translateX(30px)}'
+}
+heart3d.innerHTML = str;
+style.innerHTML += css;
+</script>
+</body>
+</html>

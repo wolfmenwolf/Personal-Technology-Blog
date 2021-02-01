@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>CSS3图片滤镜效果 - 素材牛（www.sucainiu.com）</title>
+<script id="jqbb" src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<style type="text/css">
+body { background-color: #fff }
+        body {
+	background-color:#000;
+}
+img {
+	margin:0 auto;
+	display:block;
+}
+ul {
+	list-style:none;
+	margin:0;
+	padding:0;
+	height:60px;
+	text-align:center;
+}
+li {
+	display:inline-block;
+	color:#fff;
+	margin:0 20px;
+	padding-bottom:4px;
+	border-bottom:2px solid #fff;
+	cursor:pointer;
+}
+li:nth-of-type(1) {
+	border-bottom-color:red;
+}
+li:nth-of-type(2) {
+	border-bottom-color:blue;
+}
+li:nth-of-type(3) {
+	border-bottom-color:yellow;
+}
+li:nth-of-type(4) {
+	border-bottom-color:green;
+}
+li:nth-of-type(5) {
+	border-bottom-color:#fff;
+}
+li:nth-of-type(6) {
+	border-bottom-color:#f40;
+}
+.inp {
+	width:200px;
+	height:100px;
+	margin:20px auto 0;
+	color:#fff;
+}
+</style>
+</head>
+
+<body>
+<ul>
+    <li id="li_2">normal</li>
+    <li id="li_3">gray</li>
+    <li id="li_4">sepia</li>
+    <li id="li_5">rotate</li>
+    <li id="li_6">blur</li>
+    <li id="li_7">invert</li>
+</ul>
+<img src="http://www.sucainiu.com/demo/php/2017/1705/b2.jpg" alt="" width="815" class="all">
+<div class="inp">
+    饱和度：<input type="range" id="one" max="100" min="0" value="0"> 亮   度：
+    <input type="range" id="two" max="100" min="0" value="0"> 对比度：
+    <input type="range" id="three" max="100" min="0" value="0">
+</div>
+
+<script>
+  document.querySelector('#li_2').onclick = function() {
+      imgs.style.filter = 'none'
+  }
+  document.querySelector('#li_3').onclick = function() {
+      imgs.style.filter = 'grayscale(100%)'
+  }
+  document.querySelector('#li_4').onclick = function() {
+      imgs.style.filter = 'sepia(1)'
+  }
+  document.querySelector('#li_5').onclick = function() {
+      imgs.style.filter = 'hue-rotate(90deg)'
+  }
+  document.querySelector('#li_6').onclick = function() {
+      imgs.style.filter = 'blur(10px)'
+  }
+  document.querySelector('#li_7').onclick = function() {
+      imgs.style.filter = 'invert(100)'
+  }
+  var imgs = document.querySelector('img')
+  var one = document.querySelector('#one')
+  var two = document.querySelector('#two')
+  var three = document.querySelector('#three')
+  one.oninput = function() {
+      imgs.style.filter = 'saturate(' + this.value / 10 + ')';
+  }
+  two.oninput = function() {
+      imgs.style.filter = 'brightness(' + this.value / 10 + ')';
+  }
+  three.oninput = function() {
+      imgs.style.filter = 'contrast(' + this.value / 10 + ')';
+  }
+</script>
+<script type="text/javascript" async src="//idm-su.baidu.com/su.js"></script>
+</body>
+</html>

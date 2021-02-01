@@ -1,0 +1,167 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>CSS3自定义单选按钮和复选框 - 素材牛（www.sucainiu.com）</title>
+<script id="jqbb" src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<style type="text/css">
+body { background-color: #fff }
+ * {
+	margin:0;
+	padding:0;
+	box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	text-decoration:none;
+	list-style:none;
+	-webkit-touch-callout:none;
+	-webkit-user-select:none;
+	-webkit-tap-highlight-color:transparent;
+	-webkit-appearance:none;
+	-webkit-font-smoothing:antialiased;
+	font-family:"microsoft yahei",Arial,Helvetica,sans-serif;
+}
+.max_box {
+	width:100%;
+	height:100%;
+	background-color:black;
+	position:absolute;
+}
+input[type='checkbox'] {
+	width:0;
+}
+.wrapper {
+	width:580px;
+	height:130px;
+	margin:100px auto;
+	padding:0 20px;
+}
+.wrapper > h3 {
+	font-size:16px;
+	color:snow;
+}
+li {
+	width:120px;
+	height:50px;
+	float:left;
+	padding:12px 0;
+}
+li:nth-child(4n+1)  ~ li:nth-child(4n+3) {
+	margin-left:20px;
+}
+label {
+	width:125px;
+	height:32px;
+	display:block;
+	cursor:pointer;
+}
+.check_container {
+	width:18px;
+	height:18px;
+	border:1px solid snow;
+	float:left;
+	margin-top:6px;
+	position:relative;
+}
+input[type='checkbox']:checked + .check_container:before {
+	content:'';
+	position:absolute;
+	width:3px;
+	height:10px;
+	border-right:2px solid snow;
+	border-bottom:2px solid snow;
+	transform:rotate(45deg);
+	-webkit-transform:rotate(45deg);
+	-moz-transform:rotate(45deg);
+	-ms-transform:rotate(45deg);
+	-o-transform:rotate(45deg);
+	left:6px;
+}
+input[type='checkbox']:checked + .check_container + span {
+	color:lightseagreen;
+}
+h3 + ul label > span {
+	display:block;
+	float:left;
+	width:107px;
+	height:30px;
+	line-height:30px;
+	color:hotpink;
+	text-align:left;
+	font-size:16px;
+	padding-left:12px;
+}
+</style>
+</head>
+
+<body>
+<div class="max_box">
+  <div class="wrapper">
+    <h3>你喜欢谁?</h3>
+    <ul>
+      <li>
+        <label for="loulou">
+        <input type="checkbox" id="loulou">
+        <div class="check_container"></div>
+        <span>楼楼</span>
+        </label>
+      </li>
+      <li>
+        <label for="chouchou">
+        <input type="checkbox" id="chouchou">
+        <div class="check_container"></div>
+        <span>丑丑</span>
+        </label>
+      </li>
+      <li>
+        <label for="ruirui">
+        <input type="checkbox" id="ruirui">
+        <div class="check_container"></div>
+        <span>瑞瑞</span>
+        </label>
+      </li>
+      <li>
+        <label for="momo">
+        <input type="checkbox" id="momo">
+        <div class="check_container"></div>
+        <span>沫沫</span>
+        </label>
+      </li>
+      <li>
+        <label for="baobao">
+        <input type="checkbox" id="baobao">
+        <div class="check_container"></div>
+        <span>暴暴</span>
+        </label>
+      </li>
+      <li>
+        <label for="xiaohan">
+        <input type="checkbox" id="xiaohan">
+        <div class="check_container"></div>
+        <span>小寒</span>
+        </label>
+      </li>
+      <li>
+        <label for="pn">
+        <input type="checkbox" id="pn">
+        <div class="check_container"></div>
+        <span>PN</span>
+        </label>
+      </li>
+      <li>
+        <label for="rhythm">
+        <input type="checkbox" id="rhythm">
+        <div class="check_container"></div>
+        <span>蓝色主旋律</span>
+        </label>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<script>
+
+</script>
+<script type="text/javascript" async src="//idm-su.baidu.com/su.js"></script>
+</body>
+</html>

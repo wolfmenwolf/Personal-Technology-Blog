@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>CSS3相册画廊 - 素材牛（www.sucainiu.com）</title>
+<script id="jqbb" src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<style type="text/css">
+body { background-color: #fff }
+html,body,ul.thumb,ul.thumb li {
+	padding:0;
+	margin:0;
+}
+html,body,ul.thumb {
+	width:100%;
+	height:100%;
+	overflow:hidden;
+}
+ul.thumb {
+	position:relative;
+	list-style:none;
+	background:#333;
+}
+ul.thumb li {
+	position:absolute;
+	top:50%;
+	left:50%;
+	padding:6px 6px 24px 6px;
+	background:#FFF;
+	width:150px;
+	height:130px;
+	box-shadow:1px 1px 6px #222;
+	transition:all 3s ease-in-out;
+	z-index:0;
+}
+ul.thumb li img {
+	width:100%;
+	height:100%;
+}
+ul.thumb li:nth-child(1) {
+	margin-top:-130px;
+	margin-left:-130px;
+	transform:rotate(30deg);
+	filter:blur(5px);
+}
+ul.thumb li:nth-child(2) {
+	margin-top:-120px;
+	margin-left:-10px;
+	transform:rotate(19deg);
+	filter:blur(4px);
+}
+ul.thumb li:nth-child(3) {
+	margin-top:-10px;
+	margin-left:-180px;
+	transform:rotate(-10deg);
+	filter:blur(3px);
+}
+ul.thumb li:nth-child(4) {
+	margin-top:-50px;
+	margin-left:-80px;
+	transform:rotate(12deg);
+	filter:blur(2px);
+}
+ul.thumb li:nth-child(5) {
+	margin-top:20px;
+	margin-left:30px;
+	transform:rotate(-20deg);
+	filter:blur(1px);
+}
+ul.thumb li:hover {
+	z-index:10;
+	width:480px;
+	height:322px;
+	margin-top:-151px;
+	margin-left:-240px;
+	filter:blur(0px);
+	transform:rotate(0deg);
+}
+</style>
+</head>
+
+<body>
+<ul class="thumb">
+<li>
+        <img src="
+http://www.sucainiu.com/themes/images/demo/500x300-1.png">
+</li>
+    <li>
+        <img src="
+http://www.sucainiu.com/themes/images/demo/500x300-2.png">
+</li>
+    <li>
+        <img src="
+http://www.sucainiu.com/themes/images/demo/500x300-3.png">
+</li>
+    <li>
+        <img src="
+http://www.sucainiu.com/themes/images/demo/500x300-4.png">
+</li>
+    <li>
+        <img src="
+http://www.sucainiu.com/themes/images/demo/500x300-5.png">
+</li>
+</ul>
+
+<script>
+
+</script>
+</body>
+</html>

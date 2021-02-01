@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>CS3炫酷六边体旋转立体相册 - 素材牛（www.sucainiu.com）</title>
+<script id="jqbb" src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<style type="text/css">
+body { background-color: #fff }
+body {
+	background:#cef;
+}
+#all {
+	margin:250px auto;
+	-webkit-perspective:2500px;
+}
+#imgs div {
+	position:absolute;
+	left:300px;
+	width:235px;
+	height:235px;
+}
+#imgs img {
+	width:235px;
+	height:235px;
+	border-radius:15px;
+	opacity:0.6;
+}
+#imgs {
+	-webkit-transform-style:preserve-3d;
+	animation:imgs 6s linear  infinite;
+}
+#h {
+	transform:rotatey(0deg) translatez(200px);
+}
+#qy {
+	transform:rotatey(60deg) translatez(200px);
+}
+#qz {
+	transform:rotatey(120deg) translatez(200px);
+}
+#hy {
+	transform:rotatey(180deg) translatez(200px);
+}
+#hz {
+	transform:rotatey(240deg) translatez(200px);
+}
+#q {
+	transform:rotatey(300deg) translatez(200px);
+}
+@keyframes imgs {
+	0% {
+	transform:rotatey(0deg) rotatex(30deg)
+}
+50% {
+	transform:rotatey(180deg) rotatex(-30deg)
+}
+100% {
+	transform:rotatey(360deg)rotatex(30deg)
+}
+}#imgs:hover {
+	-webkit-animation-play-state:paused;
+}
+#h img:hover,#qy img:hover,#hy img:hover,#qz img:hover,#hz img:hover,#q img:hover {
+	transform:scale(1.5);
+}
+#h img,#qy img,#hy img,#qz img,#hz img,#q img {
+	transition:all 0.3s linear;
+}
+</style>
+</head>
+
+<body>
+<div id="all">
+	<div id="imgs">
+		<div id="h">
+			<img src="http://www.sucainiu.com/themes/images/demo/500x300a.png">
+</div>
+		<div id="qy">
+			<img src="http://www.sucainiu.com/themes/images/demo/500x300b.png">
+</div>
+		<div id="hy">
+			<img src="http://www.sucainiu.com/themes/images/demo/500x300c.png">
+</div>
+		<div id="qz">
+			<img src="http://www.sucainiu.com/themes/images/demo/500x300d.png">
+</div>
+		<div id="hz">
+			<img src="http://www.sucainiu.com/themes/images/demo/500x300a.png">
+</div>
+		<div id="q">
+			<img src="http://www.sucainiu.com/themes/images/demo/500x300b.png">
+</div>
+	</div>
+  </div>
+
+<script>
+
+</script>
+</body>
+</html>

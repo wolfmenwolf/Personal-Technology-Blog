@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jQuery全屏背景图片切换，跟随手风琴图片切换效果 - 素材牛（www.sucainiu.com）</title>
+<script id="jqbb" src="http://libs.baidu.com/jquery/1.8.3/jquery.min.js"></script>
+<style type="text/css">
+body { background-color: #fff }
+* {
+	margin:0;
+	padding:0;
+}
+body,html {
+	width:100%;
+	height:100%;
+}
+.bg {
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+}
+.bg-box-1 {
+	background:url('img/1.jpg') no-repeat center/cover;
+}
+.bg-box-2 {
+	background:url('img/2.jpg') no-repeat center/cover;
+}
+.bg-box-3 {
+	background:url('img/3.jpg') no-repeat center/cover;
+}
+.bg-box-4 {
+	background:url('img/4.jpg') no-repeat center/cover;
+}
+#wrap {
+	position:absolute;
+	overflow:hidden;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	margin:auto;
+	width:1000px;
+	height:400px;
+}
+#wrap&gt;ul {
+	width:120%;
+	list-style:none;
+}
+#wrap&gt;ul&gt;li {
+	float:left;
+	width:100px;
+	height:400px;
+	cursor:pointer;
+}
+#wrap&gt;ul&gt;li:nth-child(1) {
+	background:url('http://www.sucainiu.com/themes/images/demo/500x300-1.png') no-repeat center/cover;
+}
+/*
+				 * 规定属于其父元素的第二个子元素的每个 p 的背景图片  center/cover让图片
+				 * 在固定大小的盒子内全屏显示
+ 			*/
+			
+			#wrap&gt;ul&gt;li:nth-child(2) {
+	background:url('http://www.sucainiu.com/themes/images/demo/500x300-2.png') no-repeat center/cover;
+}
+/*
+			 * 同上
+			 */
+			#wrap&gt;ul&gt;li:nth-child(3) {
+	background:url('http://www.sucainiu.com/themes/images/demo/500x300-3.png') no-repeat center/cover;
+}
+#wrap&gt;ul&gt;li:nth-child(4) {
+	background:url('http://www.sucainiu.com/themes/images/demo/500x300-4.png') no-repeat center/cover;
+	/*
+				 *最后一个略缩图要给它设置宽度  要不然不显示
+				 * */
+				width:700px;
+}
+#wrap&gt;ul&gt;li&gt;.text {
+	width:100px;
+	height:100%;
+	background:#000;
+	opacity:.5;
+}
+#wrap&gt;ul&gt;li&gt;.text p {
+	padding:20px 40px;
+	font-family:"微软雅黑";
+	color:#fff;
+}
+</style>
+</head>
+
+<body>
+<div class="bg bg-box-1"></div>
+<div class="bg bg-box-2"></div>
+<div class="bg bg-box-3"></div>
+<div class="bg bg-box-4"></div>
+<div id="wrap">
+    <ul>
+<li>
+            <div class="text">
+                <p>猩红之月●亚索</p>
+            </div>
+        </li>
+        <li>
+            <div class="text">
+                <p>仲裁圣骑●暗裔剑魔</p>
+            </div>
+        </li>
+        <li>
+            <div class="text">
+                <p>上古战魂●魔腾</p>
+            </div>
+        </li>
+        <li class="curr">
+            <div class="text">
+                <p>霸天异形●卡兹克</p>
+            </div>
+        </li>
+    </ul>
+</div>
+
+<script>
+(function() {
+	//单鼠标经过的时候 判断他是否有 curr类 如果没有就先删除在添加
+	$('#wrap li').mouseover(function() {
+		if (!$(this).hasClass('curr')) {
+			$('#wrap li').removeClass('curr');
+			$(this).addClass('curr');
+
+			// 切换背景
+			$('#wrap li').each(function(index) {
+				if ($(this).hasClass('curr')) {
+					$('.bg').fadeOut(300);
+					$('.bg:eq(' + index + ')').fadeIn(500);
+				}
+			});
+
+			$('.curr').stop().animate({
+				width: 700
+			}, 500, 'linear');
+			$('#wrap li').not('.curr').stop().animate({
+				width: 100
+			}, 500, 'linear');
+		}
+
+	});
+})()
+</script>
+</body>
+</html>

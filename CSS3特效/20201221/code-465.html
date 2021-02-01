@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>炫酷的CSS3头像显示效果 - 素材牛（www.sucainiu.com）</title>
+<script id="jqbb" src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<style type="text/css">
+body { background-color: #fff }
+.box {
+        position: relative;
+        margin: 0 auto;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        border: 1px solid rgba(235, 235, 235, .3);
+        overflow: hidden;
+      }
+      .box:after {
+        content: '';
+        width: 160px;
+        height: 160px;
+        border-radius: 50%;
+        background: rgb(255, 255, 255);
+        transition: .3s all linear;
+        opacity: 0;
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        transform: scale(0);
+        margin: auto;
+        background: url(http://www.sucainiu.com/themes/images/demo/1.png) no-repeat center 0px / cover;
+      }
+      .fb {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        opacity: .4;
+        transition: .3s all ease-in;
+      }
+      .fb:nth-child(1) {
+        background: rgba(255, 0, 0, 1);
+        transform: translateX(0)translateY(-100px);
+      }
+      .fb:nth-child(2) {
+        background: rgba(255, 165, 0, 1);
+        transform: translateX(70.7px)translateY(-70.7px);
+      }
+      .fb:nth-child(3) {
+        background: rgba(255, 255, 0, 1);
+        transform: translateX(100px)translateY(0);
+      }
+      .fb:nth-child(4) {
+        background: rgba(0, 255, 0, 1);
+        transform: translateX(70.7px)translateY(70.7px);
+      }
+      .fb:nth-child(5) {
+        background: rgba(0, 127, 255, 1);
+        transform: translateX(0)translateY(100px);
+      }
+      .fb:nth-child(6) {
+        background: rgba(0, 0, 255, 1);
+        transform: translateX(-70.7px)translateY(70.7px);
+      }
+      .fb:nth-child(7) {
+        background: rgba(139, 0, 255, 1);
+        transform: translateX(-100px)translateY(0);
+      }
+      .fb:nth-child(8) {
+        background: rgba(255, 0, 0, 1);
+        transform: translateX(-70.7px)translateY(-70.7px);
+      }
+      .box:hover::after {
+        transform: scale(1);
+        opacity: .7;
+      }
+      .box:hover .fb:nth-child(1) {
+        background: rgba(255, 0, 0, 1);
+        transform: translateX(0)translateY(-20px);
+      }
+      .box:hover .fb:nth-child(2) {
+        background: rgba(255, 165, 0, 1);
+        transform: translateX(-14.14px)translateY(14.14px);
+      }
+      .box:hover .fb:nth-child(3) {
+        background: rgba(255, 255, 0, 1);
+        transform: translateX(20px)translateY(0);
+      }
+      .box:hover .fb:nth-child(4) {
+        background: rgba(0, 255, 0, 1);
+        transform: translateX(14.14px)translateY(14.14px);
+      }
+      .box:hover .fb:nth-child(5) {
+        background: rgba(0, 127, 255, 1);
+        transform: translateX(0)translateY(20px);
+      }
+      .box:hover .fb:nth-child(6) {
+        background: rgba(0, 0, 255, 1);
+        transform: translateX(-14.14px)translateY(14.14px);
+      }
+      .box:hover .fb:nth-child(7) {
+        background: rgba(139, 0, 255, 1);
+        transform: translateX(-20px)translateY(0);
+      }
+      .box:hover .fb:nth-child(8) {
+        background: rgba(255, 0, 0, 1);
+        transform: translateX(-14.14px)translateY(-14.14px);
+      }
+</style>
+</head>
+
+<body>
+<div class="box">
+    <div class="fb"></div>
+    <div class="fb"></div>
+    <div class="fb"></div>
+    <div class="fb"></div>
+    <div class="fb"></div>
+    <div class="fb"></div>
+    <div class="fb"></div>
+    <div class="fb"></div>
+</div>
+
+<script>
+
+</script>
+</body>
+</html>
